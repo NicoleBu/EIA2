@@ -1,11 +1,8 @@
 namespace Aufgabe0
 
-{
-    
-    var name : string ="";
-    function box(){
-        var name = prompt ("Wie soll ich dich nennen? :");
-        var node : any= document.getElementById("Box");
+{       var name : string = prompt ("Wie soll ich dich nennen? :");
+        function box(){
+        var node : HTMLElement = document.getElementById("Box");
         
         node.innerHTML += "Hallo ";
         node.innerHTML += name;
@@ -13,7 +10,7 @@ namespace Aufgabe0
         
         console.log("Hallo",name,", schön dich kennenzulernen!")
         
-       }
+        }
         
 document.addEventListener('DOMContentLoaded',box);
 }
