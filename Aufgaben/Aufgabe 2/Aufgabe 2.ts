@@ -1,6 +1,8 @@
 namespace UNO {
+  
+    function Unospiel() {  
     
-    interface UNO{
+        interface UNO{
               
               Cards: string;
               y: number;
@@ -14,7 +16,7 @@ namespace UNO {
     
     let card0: UNO={
         
-              Card: "0",
+              Cards: "0",
               y: 2,
               r: 2,
               g: 2,
@@ -26,7 +28,7 @@ namespace UNO {
     
     let card1: UNO={
         
-              Card: "1",
+              Cards: "1",
               y: 2,
               r: 2,
               g: 2,
@@ -38,7 +40,7 @@ namespace UNO {
     
     let card2: UNO={
         
-              Card: "2",
+              Cards: "2",
               y: 2,
               r: 2,
               g: 2,
@@ -50,7 +52,7 @@ namespace UNO {
     
     let card3: UNO={
         
-              Card: "3",
+              Cards: "3",
               y: 2,
               r: 2,
               g: 2,
@@ -62,7 +64,7 @@ namespace UNO {
     
     let card4: UNO={
         
-              Card: "4",
+              Cards: "4",
               y: 2,
               r: 2,
               g: 2,
@@ -74,7 +76,7 @@ namespace UNO {
     
     let card5: UNO={
         
-              Card: "5",
+              Cards: "5",
               y: 2,
               r: 2,
               g: 2,
@@ -86,7 +88,7 @@ namespace UNO {
     
     let card6: UNO={
         
-              Card: "6",
+              Cards: "6",
               y: 2,
               r: 2,
               g: 2,
@@ -98,7 +100,7 @@ namespace UNO {
     
     let card7: UNO={
         
-              Card: "7",
+              Cards: "7",
               y: 2,
               r: 2,
               g: 2,
@@ -110,7 +112,7 @@ namespace UNO {
     
     let card8: UNO={
         
-              Card: "8",
+              Cards: "8",
               y: 2,
               r: 2,
               g: 2,
@@ -122,7 +124,7 @@ namespace UNO {
     
     let card9: UNO={
         
-              Card: "9",
+              Cards: "9",
               y: 2,
               r: 2,
               g: 2,
@@ -134,7 +136,7 @@ namespace UNO {
     
     let cardtaketwo: UNO={
         
-              Card: "taketwo",
+              Cards: "taketwo",
               y: 2,
               r: 2,
               g: 2,
@@ -146,7 +148,7 @@ namespace UNO {
     
     let cardtakefour: UNO={
         
-              Card: "takefour",
+              Cards: "takefour",
               y: 0,
               r: 0,
               g: 0,
@@ -158,7 +160,7 @@ namespace UNO {
     
     let cardmiss: UNO={
         
-              Card: "miss",
+              Cards: "miss",
               y: 2,
               r: 2,
               g: 2,
@@ -170,7 +172,7 @@ namespace UNO {
     
     let cardreverse: UNO={
         
-              Card: "reverse",
+              Cards: "reverse",
               y: 2,
               r: 2,
               g: 2,
@@ -182,7 +184,7 @@ namespace UNO {
     
     let cardwish: UNO={
         
-              Card: "wish",
+              Cards: "wish",
               y: 0,
               r: 0,
               g: 0,
@@ -192,7 +194,7 @@ namespace UNO {
     
     
     // Array --> Fügt alle Bezeichnungen (Karten) zusammen
-    let array: allcards[] = [card0, card1, card2, card3, card4, card5, card6, card7, card8, card9, cardtaketwo, cardtakefour, cardmiss, cardreverse, cardwish];
+    let array: UNO[] = [card0, card1, card2, card3, card4, card5, card6, card7, card8, card9, cardtaketwo, cardtakefour, cardmiss, cardreverse, cardwish];
     
     //Deklaration der Funktion(random) --> zufällige Kartenwahl
     
@@ -218,7 +220,13 @@ namespace UNO {
             s.bottom = 50 + "px";
             s.textAlign = "center";
             s.borderRadius = 15 + "px";
-            }
+                
+                
+                
+     //Schriftfarbe wird zu weiß #FFFFFF geändert, da Text(Zahl) sonst nicht angezeigt wird
+
+                if (_color == "#000000") { s.color = "#FFFFFF"; }
+ }
         
         
     // Spieler wird gefragt mit wie vielen Karten er spielen möchte, "Mit wie vielen Karten möchtest du spielen" erscheint in Box
@@ -242,8 +250,8 @@ namespace UNO {
 
             case 0:
                    c = "#FFFF00";
-                if (AllCards[howmanycards].y > 0) {
-                    placeDiv(c, array[howmanycards].Card, i);
+                if (array[howmanycards].y > 0) {
+                    placeDiv(c, array[howmanycards].Cards, i);
                     array [howmanycards].y--;
                     continue;
                     }
@@ -251,8 +259,8 @@ namespace UNO {
 
             case 1:
                    c = "#FF0000";
-                if (AllCards[howmanycards].r > 0) {
-                    placeDiv(c, array [howmanycards].Card, i);
+                if (array[howmanycards].r > 0) {
+                    placeDiv(c, array [howmanycards].Cards, i);
                     array [howmanycards].r--;
                     continue;
                     }
@@ -260,8 +268,8 @@ namespace UNO {
 
             case 2:
                    c = "#01DF01";
-                if (AllCards[howmanycards].g > 0) {
-                    placeDiv(c, array [howmanycards].Card, i);
+                if (array[howmanycards].g > 0) {
+                    placeDiv(c, array [howmanycards].Cards, i);
                     array [howmanycards].g--;
                     continue;
                     }
@@ -269,8 +277,8 @@ namespace UNO {
 
             case 3:
                    c = "#2E64FE";
-                if (AllCards[howmanycards].blue > 0) {
-                    placeDiv(c, array [howmanycards].Card, i);
+                if (array[howmanycards].blue > 0) {
+                    placeDiv(c, array [howmanycards].Cards, i);
                     array [howmanycards].blue--;
                     continue;
                     }
@@ -278,15 +286,13 @@ namespace UNO {
 
             case 4:
                    c = "#000000";
-                if (AllCards[howmanycards].black > 0) {
-                    placeDiv(c, array [howmanycards].Card, i);
+                if (array[howmanycards].black > 0) {
+                    placeDiv(c, array [howmanycards].Cards, i);
                     array [howmanycards].black--;
                     continue;
                     }
                     
-    //Schriftfarbe wird zu weiß #FFFFFF geändert, da Text(Zahl) sonst nicht angezeigt wird
-
-                if (_color == "#000000") { s.color = "#FFFFFF"; }
+   
 
             else {
                   i--;
@@ -308,10 +314,9 @@ namespace UNO {
             s.backgroundColor = "#E6E6E6";
             s.width = 135 + "px";
             s.height = 185 + "px";
-            s.left = (input + 1) * 150 + "px"; 
-            s.bottom = 50 + "px";
-            s.textAlign = "center";
-            s.borderRadius = 15 + "px";
+            s.right = 500 + "px";
+            s.top = 25 + "px";
+            s.borderRadius = 20 + "px";
 
             }
         
@@ -329,17 +334,17 @@ namespace UNO {
             s.backgroundColor = "#EFFBF2";
             s.width = 135 + "px";
             s.height = 185 + "px";
-            s.left = (input + 1) * 150 + "px"; 
-            s.bottom = 50 + "px";
-            s.textAlign = "center";
-            s.borderRadius = 15 + "px";
-        }
+            s.right = 500 + "px";
+            s.top = 25 + "px";
+            s.borderRadius = 20 + "px";
+          
+            }
 
         cardtray();
         stack();
 
     }
-    document.addEventListener("DOMContentLoaded", (game))
+    document.addEventListener("DOMContentLoaded", (Unospiel))
 
 
 }
