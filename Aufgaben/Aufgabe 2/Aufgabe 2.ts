@@ -314,7 +314,7 @@ namespace UNO {
             s.backgroundColor = "#E6E6E6";
             s.width = 135 + "px";
             s.height = 185 + "px";
-            s.right = 500 + "px";
+            s.right = 300 + "px";
             s.top = 25 + "px";
             s.borderRadius = 20 + "px";
 
