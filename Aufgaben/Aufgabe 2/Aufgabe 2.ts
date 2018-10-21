@@ -285,7 +285,7 @@ namespace UNO {
 
 
             case 4:
-                   c = "#000000";
+                   c = "black";
                 if (array[howmanycards].black > 0) {
                     placeDiv(c, array [howmanycards].Cards, i);
                     array [howmanycards].black--;
