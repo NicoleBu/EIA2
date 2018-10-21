@@ -153,12 +153,11 @@ var UNO;
             s.border = "solid black";
             s.position = "absolute";
             s.backgroundColor = _color;
-            s.width = 135 + "px";
-            s.height = 185 + "px";
+            s.width = 130 + "px";
+            s.height = 180 + "px";
             s.left = (input + 1) * 150 + "px";
             s.bottom = 50 + "px";
             s.textAlign = "center";
-            s.borderRadius = 15 + "px";
             //Schriftfarbe wird zu weiß #FFFFFF geändert, da Text(Zahl) sonst nicht angezeigt wird
             if (_color == "#000000") {
                 s.color = "#FFFFFF";
@@ -217,34 +216,32 @@ var UNO;
         function cardtray() {
             let div = document.createElement("div");
             document.body.appendChild(div);
-            div.setAttribute("id", "Kartenablage");
-            document.getElementById("Kartenablage").innerHTML += "Kartenablage";
+            div.setAttribute("id", "Ablage");
+            document.getElementById("Ablage").innerHTML += "Ablage";
             let s = div.style;
-            s.border = "solid black";
+            s.border = "dotted grey";
             s.textAlign = "center";
             s.position = "absolute";
             s.backgroundColor = "#E6E6E6";
-            s.width = 135 + "px";
-            s.height = 185 + "px";
-            s.right = 300 + "px";
-            s.top = 25 + "px";
-            s.borderRadius = 20 + "px";
+            s.width = 130 + "px";
+            s.height = 180 + "px";
+            s.left = 300 + "px";
+            s.top = 40 + "px";
         }
         function stack() {
             let div = document.createElement("div");
             document.body.appendChild(div);
-            div.setAttribute("id", "Unostapel");
-            document.getElementById("Unostapel").innerHTML += "Unostapel";
+            div.setAttribute("id", "UNO");
+            document.getElementById("UNO").innerHTML += "UNO";
             let s = div.style;
-            s.border = " solid black";
+            s.border = "solid black";
             s.textAlign = "center";
             s.position = "absolute";
-            s.backgroundColor = "#EFFBF2";
-            s.width = 135 + "px";
-            s.height = 185 + "px";
-            s.right = 500 + "px";
-            s.top = 25 + "px";
-            s.borderRadius = 20 + "px";
+            s.backgroundColor = "#6E6E6E";
+            s.width = 130 + "px";
+            s.height = 180 + "px";
+            s.left = 150 + "px";
+            s.top = 40 + "px";
         }
         cardtray();
         stack();
