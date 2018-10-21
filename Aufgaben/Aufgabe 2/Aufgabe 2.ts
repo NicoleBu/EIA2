@@ -211,7 +211,7 @@ namespace UNO {
             document.getElementById("a" + input).innerHTML += cards;
             //CSS Style Deklaration
             let s: CSSStyleDeclaration = div.style;
-            s.border = "solid black";
+            s.border = "2px solid black";
             s.position = "absolute";
             s.backgroundColor = _color;
             s.width = 130 + "px";
@@ -240,7 +240,7 @@ namespace UNO {
         for (let i : number = 0; i < howmanycards; i++) { 
 
 
-            let howmanycards: number = random(10); 
+            let howmanycards: number = random(15); 
 
             let colors: number = random(5);
 
@@ -285,7 +285,7 @@ namespace UNO {
 
 
             case 4:
-                   c = "black";
+                   c = "#000000";
                 if (array[howmanycards].black > 0) {
                     placeDiv(c, array [howmanycards].Cards, i);
                     array [howmanycards].black--;
@@ -327,7 +327,7 @@ namespace UNO {
             div.setAttribute("id", "UNO");
             document.getElementById("UNO").innerHTML += "UNO";
             let s = div.style;
-            s.border = "solid black";
+            s.border = "2px solid black";
             s.textAlign = "center";
             s.position = "absolute";
             s.backgroundColor = "#6E6E6E";
@@ -343,6 +343,7 @@ namespace UNO {
         stack();
 
     }
+    
     document.addEventListener("DOMContentLoaded", (Unospiel))
 
 

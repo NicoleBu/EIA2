@@ -150,7 +150,7 @@ var UNO;
             document.getElementById("a" + input).innerHTML += cards;
             //CSS Style Deklaration
             let s = div.style;
-            s.border = "solid black";
+            s.border = "2px solid black";
             s.position = "absolute";
             s.backgroundColor = _color;
             s.width = 130 + "px";
@@ -169,7 +169,7 @@ var UNO;
         howmanycards = Number(select);
         let c = "";
         for (let i = 0; i < howmanycards; i++) {
-            let howmanycards = random(10);
+            let howmanycards = random(15);
             let colors = random(5);
             switch (colors) {
                 case 0:
@@ -201,7 +201,7 @@ var UNO;
                         continue;
                     }
                 case 4:
-                    c = "black";
+                    c = "#000000";
                     if (array[howmanycards].black > 0) {
                         placeDiv(c, array[howmanycards].Cards, i);
                         array[howmanycards].black--;
@@ -234,7 +234,7 @@ var UNO;
             div.setAttribute("id", "UNO");
             document.getElementById("UNO").innerHTML += "UNO";
             let s = div.style;
-            s.border = "solid black";
+            s.border = "2px solid black";
             s.textAlign = "center";
             s.position = "absolute";
             s.backgroundColor = "#6E6E6E";
