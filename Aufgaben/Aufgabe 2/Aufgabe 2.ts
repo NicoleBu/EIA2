@@ -12,7 +12,7 @@ namespace UNO {
               black: number;
         };
               
-    // Karte 0
+    // Karte 0 
     
     let card0: UNO={
         
@@ -136,7 +136,7 @@ namespace UNO {
     
     let cardtaketwo: UNO={
         
-              Cards: "taketwo",
+              Cards: "+2",
               y: 2,
               r: 2,
               g: 2,
@@ -148,7 +148,7 @@ namespace UNO {
     
     let cardtakefour: UNO={
         
-              Cards: "takefour",
+              Cards: "+4",
               y: 0,
               r: 0,
               g: 0,
@@ -201,7 +201,7 @@ namespace UNO {
             function random(num: number) { return Math.floor(Math.random() * Math.floor(num)) };
 
 
-    //function placeDiv --> erstellt Dokument in HTML 
+    //function placeDiv --> erstellt Dokument in HTML
     
             function placeDiv(_color: string, cards: string, input: number): void {
             let div: HTMLDivElement = document.createElement("div");
@@ -307,6 +307,7 @@ namespace UNO {
             document.body.appendChild(div);
             div.setAttribute("id", "Ablage");
             document.getElementById("Ablage").innerHTML += "Ablage";
+             
             let s = div.style;
             s.border = "dotted grey";
             s.textAlign = "center";
@@ -326,6 +327,7 @@ namespace UNO {
             document.body.appendChild(div);
             div.setAttribute("id", "UNO");
             document.getElementById("UNO").innerHTML += "UNO";
+            
             let s = div.style;
             s.border = "2px solid black";
             s.textAlign = "center";

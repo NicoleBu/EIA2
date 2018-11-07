@@ -1,7 +1,7 @@
 var UNO;
 (function (UNO) {
     function Unospiel() {
-        // Alle gelben Karten    
+        // Alle gelben Karten     
         let yellow1 = {
             color: "#FFFF00",
             value: "0",
@@ -102,7 +102,7 @@ var UNO;
             color: "#FFFF00",
             value: "<->",
         };
-        // Alle grünen Karten
+        // Alle grünen K      
         let green1 = {
             color: "#01DF01",
             value: "0",
@@ -203,7 +203,7 @@ var UNO;
             color: "#01DF01",
             value: "<->",
         };
-        // Alle roten Karten 
+        // Alle roten K       
         let red1 = {
             color: "#FF0000",
             value: "0",
@@ -304,7 +304,7 @@ var UNO;
             color: "#FF0000",
             value: "<->",
         };
-        // Alle blauen Karten
+        // Alle blauen        
         let blue1 = {
             color: "#2E64FE",
             value: "0",
@@ -405,7 +405,7 @@ var UNO;
             color: "#2E64FE",
             value: "<->",
         };
-        // Alle schwarzen Karten      
+        // Alle schwarzen Karten       
         let black1 = {
             color: "#000000",
             value: "+4",

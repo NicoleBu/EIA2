@@ -2,7 +2,7 @@ var UNO;
 (function (UNO) {
     function Unospiel() {
         ;
-        // Karte 0
+        // Karte 0 
         let card0 = {
             Cards: "0",
             y: 2,
@@ -94,7 +94,7 @@ var UNO;
         };
         // nehme 2 Karten
         let cardtaketwo = {
-            Cards: "taketwo",
+            Cards: "+2",
             y: 2,
             r: 2,
             g: 2,
@@ -103,7 +103,7 @@ var UNO;
         };
         // nehme 4 Karten
         let cardtakefour = {
-            Cards: "takefour",
+            Cards: "+4",
             y: 0,
             r: 0,
             g: 0,
@@ -142,7 +142,7 @@ var UNO;
         //Deklaration der Funktion(random) --> zufällige Kartenwahl
         function random(num) { return Math.floor(Math.random() * Math.floor(num)); }
         ;
-        //function placeDiv --> erstellt Dokument in HTML 
+        //function placeDiv --> erstellt Dokument in HTML
         function placeDiv(_color, cards, input) {
             let div = document.createElement("div");
             document.body.appendChild(div);
