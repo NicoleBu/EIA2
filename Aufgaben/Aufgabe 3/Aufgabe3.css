@@ -1,0 +1,60 @@
+@charset "UTF-8";
+
+      #stack{
+      position: absolute;
+      font-size: 20px;
+      text-align: center;
+      color: white;
+	  border: 2px solid black;
+	  border-radius: 25px;
+      position: absolute;
+      background-color: #6E6E6E;
+      width: 10%;
+      height: 30%;
+      left: 35.5%;
+      top: 5%;
+	  }
+	  
+	  #stack > p{
+	  margin-top: 90px;
+	  }
+	         
+	  #cardtray{
+	  position: absolute;
+	  font-size: 20px;
+	  text-align: center;
+	  border: dotted grey;
+	  border-radius: 25px;
+      position: absolute;
+      background-color: #E6E6E6;
+      width: 10%;
+      height: 30%;
+      left: 50.5%;
+      top: 5%;
+	  }
+	  
+	  #cardtray > p{
+	  margin-top: 100px;
+	  }
+	  
+	  #sortcards{
+	  text-align: center;
+	  border: ridge black 2px;
+	  background-color: white;
+	  font-size: 1.5em;
+	  width: 100px;
+	  height: 35px;
+	  position: absolute;
+	  top: 300px;
+      left: 650px;
+      }
+	
+	  #sortcards > p{
+	  margin: 2px;
+	  }
+	  
+	 
+	  
+	  body{
+	  background-color: #cdaa7d;
+	  }
