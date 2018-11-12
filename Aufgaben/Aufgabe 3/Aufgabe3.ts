@@ -722,6 +722,8 @@ function GetCard () {
           main.setAttribute("id", "input");
           document.getElementsByTagName("body")[0].appendChild(main);
           
+          }
+          
           
           function placeDiv(_color: string, cards: string, input: number): void {
             let div: HTMLDivElement = document.createElement("div");
@@ -742,11 +744,10 @@ function GetCard () {
             s.bottom = 75 + "px";
 
             //Schriftfarbe wird zu weiß #FFFFFF geändert, da Text(Zahl) sonst nicht angezeigt wird   
-            if (_color == "#000000") { s.color = "#FFFFFF"; }
-        }
-         
+            if (_color == "#000000") { s.color = "#FFFFFF"; 
+            }
         
-       
-  }  
+         
+       }  
 
   // Ich finde den Fehler nicht. Habe eigentlich alle Klammern geschlossen. Mein Code scheint trotzdem nicht zu funktionieren. Im Browser werden mir die Spielerkarten nicht ausgegeben und dementprechend kann auch die Funktion des Karten ablegens, sowie aufnehmens nicht erfolgen.  
