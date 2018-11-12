@@ -1,0 +1,128 @@
+@charset "UTF-8";
+
+#cardtrayhtml {
+	  position: absolute;
+	  font-size: 20px;
+	  text-align: center;
+	  border: dotted grey;
+	  border-radius: 25px;
+      position: absolute;
+      background-color: #E6E6E6;
+      width: 145px;
+	  height: 245px;
+      left: 50.5%;
+      top: 5%;
+}
+
+#cardtrayhtml > p{
+	  margin-top: 110px;
+	  }
+
+#Unohtml {
+	  position: absolute;
+      font-size: 20px;
+      text-align: center;
+      color: white;
+	  border: 2px solid black;
+	  border-radius: 25px;
+      position: absolute;
+      background-color: #6E6E6E;
+      width: 145px;
+	  height: 245px;
+      left: 35.5%;
+      top: 5%;
+}
+
+#Unohtml > p{
+	  margin-top: 100px;
+	  }
+
+#playercardshtml {
+	width: 1300px;
+	border-style: solid;
+	border-width: 2px solid black;
+	height: 270px;
+	bottom: 20px;
+	left: 60px;
+	position: absolute;
+	background-color:white;
+}
+
+.playercardshtml {
+	display: inline-block;
+	bottom: 5px;
+	margin: 10px;
+}
+
+.blue {
+	background-color: #2E64FE;
+	border: 2px solid black;
+	border-radius: 25px;
+	text-align: center;
+	font-size: 20px;
+	width: 145px;
+	height: 245px;
+}
+
+.yellow {
+	background-color: #FFFF00;
+	border: 2px solid black;
+	border-radius: 25px;
+	text-align: center;
+	font-size: 20px;
+	width: 145px;
+	height: 245px;
+}
+
+.green {
+	background-color: #01DF01;
+	border: 2px solid black;
+	border-radius: 25px;
+	text-align: center;
+	font-size: 20px;
+	width: 145px;
+	height: 245px;
+}
+
+.red {
+	background-color: #FF0000;
+	border: 2px solid black;
+	border-radius: 25px;
+	text-align: center;
+	font-size: 20px;
+	width: 145px;
+	height: 245px;
+}
+
+.black {
+	background-color: #000000;
+	border: 2px solid balck;
+	border-radius: 25px;
+	text-align: center;
+	font-size: 20px;
+	width: 145px;
+	height: 245px;
+	color: white;
+}
+
+#sortcardshtml {
+	  text-align: center;
+	  border: ridge black 2px;
+	  background-color: white;
+	  font-size: 1.5em;
+	  width: 100px;
+	  height: 35px;
+	  position: absolute;
+	  top: 300px;
+      left: 650px;
+}
+
+#sortcardshtml > p{
+	  margin: 2px;
+	  }
+	  
+	  
+
+body{
+	  background-color: #cdaa7d;
+	  }   
