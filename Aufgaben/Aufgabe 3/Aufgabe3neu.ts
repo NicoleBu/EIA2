@@ -95,7 +95,7 @@ namespace Unoneu {
     function showMyCards(): void {
 
         document.getElementById("playercardshtml").innerHTML = "";                            // nimmt die Info aus dem HTML-Element von Id um Karte an der richtigen Position anzeigen zu lassen.
-        for (let showCard: number = 0; showCard < playerCards.length; showCard++) {      // zeigt eine Karte nach der anderen an, bis alle Karten im playerCards Arry sichtlich vorhanden sind
+        for (let showCard: number = 0; showCard < playerCards.length; showCard++) {      // zeigt eine Karte nach der anderen an, bis alle Karten im playerCards Array sichtlich vorhanden sind
             let div: HTMLElement = document.createElement("div");                        // erstellt ein Div 
             document.getElementById("playercardshtml").appendChild(div);                      // verbindet div mit Eltern-div, div ist Kind von Handkarten(div)
             div.innerHTML = playerCards[showCard].value;                                 // Fügt value zu Karte hinzu
