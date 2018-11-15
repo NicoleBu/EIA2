@@ -80,16 +80,16 @@ var Unoneu;
     // Karten ablegen
     //**
     function layDownCard(_event) {
-        document.getElementById("cardtrayhtml").innerHTML = "";
-        let choosenCard = _event.target;
-        let index = parseInt(choosenCard.id);
-        cardTray.push(playerCards[index]);
-        let div = document.createElement("div");
-        document.getElementById("cardtrayhtml").appendChild(div);
-        div.innerHTML = playerCards[index].value;
-        div.classList.add(playerCards[index].color);
-        playerCards.splice(index, 1);
-        showMyCards();
+        document.getElementById("cardtrayhtml").innerHTML = ""; // nimmt Information duch id "cardtray" aus der HTML
+        let choosenCard = _event.target; // angeklickte Karte (_event.target) wird aus dem HTMLElement ausgesucht
+        let index = parseInt(choosenCard.id); // erstellt index, index wird eine bestimmte Zeichenkette zugesprochen und wndelt sie in eine Ganzzahl um (parseInt())
+        cardTray.push(playerCards[index]); // anhand des indexs wird eine bestimmte Karte aus dem Array playerCards in das Array cardTray gepusht
+        let div = document.createElement("div"); // erstellt ein div
+        document.getElementById("cardtrayhtml").appendChild(div); // verbindet div mit Eltern div, div ist Kind von Ablage(div)
+        div.innerHTML = playerCards[index].value; // fügt value, zu individueller Stelle einer Karte in playercards, hinzu
+        div.classList.add(playerCards[index].color); // erstellt Klasse zu zum persönlichen index von Handkarten bezogen auf das Array color
+        playerCards.splice(index, 1); // den Handkarten wird jeweils eine Karte entfernt, Karte wird aus index gewählt
+        showMyCards(); // übrig geblieben Karten werden angezeigt
     }
     // sortiert Karten
     function sortCards() {

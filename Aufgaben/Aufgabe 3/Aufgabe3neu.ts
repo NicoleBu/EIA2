@@ -94,14 +94,14 @@ namespace Unoneu {
     //*
     function showMyCards(): void {
 
-        document.getElementById("playercardshtml").innerHTML = "";                            // nimmt die Info aus dem HTML-Element von Id um Karte an der richtigen Position anzeigen zu lassen.
+        document.getElementById("playercardshtml").innerHTML = "";                       // nimmt die Info aus dem HTML-Element von Id um Karte an der richtigen Position anzeigen zu lassen.
         for (let showCard: number = 0; showCard < playerCards.length; showCard++) {      // zeigt eine Karte nach der anderen an, bis alle Karten im playerCards Array sichtlich vorhanden sind
             let div: HTMLElement = document.createElement("div");                        // erstellt ein Div 
-            document.getElementById("playercardshtml").appendChild(div);                      // verbindet div mit Eltern-div, div ist Kind von Handkarten(div)
+            document.getElementById("playercardshtml").appendChild(div);                 // verbindet div mit Eltern-div, div ist Kind von Handkarten(div)
             div.innerHTML = playerCards[showCard].value;                                 // Fügt value zu Karte hinzu
             let id: string = showCard.toString();                                        // erstellt eine Id zu showCards
             div.setAttribute("id", id);                                                  // Ausführung mit Hilfe von einem Attribute
-            div.classList.add("playercardshtml");                                             // Erstellt Klasse zu div Spielerkarten
+            div.classList.add("playercardshtml");                                        // Erstellt Klasse zu div Spielerkarten
             div.classList.add(playerCards[showCard].color);                              // Erstellt Klasse zu den angezeigten Spielerkarte
             div.addEventListener("click", layDownCard);                                  // EventListener wird hinzugefügt, Funktion **
 
@@ -113,16 +113,16 @@ namespace Unoneu {
     
     //**
     function layDownCard(_event: MouseEvent): void {
-        document.getElementById("cardtrayhtml").innerHTML = "";
-        let choosenCard: HTMLElement = <HTMLElement>_event.target;
-        let index: number = parseInt(choosenCard.id);
-        cardTray.push(playerCards[index]);
-        let div: HTMLElement = document.createElement("div");
-        document.getElementById("cardtrayhtml").appendChild(div);
-        div.innerHTML = playerCards[index].value;
-        div.classList.add(playerCards[index].color);
-        playerCards.splice(index, 1);
-        showMyCards();
+        document.getElementById("cardtrayhtml").innerHTML = "";      // nimmt Information duch id "cardtray" aus der HTML
+        let choosenCard: HTMLElement = <HTMLElement>_event.target;   // angeklickte Karte (_event.target) wird aus dem HTMLElement ausgesucht
+        let index: number = parseInt(choosenCard.id);                // erstellt index, index wird eine bestimmte Zeichenkette zugesprochen und wndelt sie in eine Ganzzahl um (parseInt())
+        cardTray.push(playerCards[index]);                           // anhand des indexs wird eine bestimmte Karte aus dem Array playerCards in das Array cardTray gepusht
+        let div: HTMLElement = document.createElement("div");        // erstellt ein div
+        document.getElementById("cardtrayhtml").appendChild(div);    // verbindet div mit Eltern div, div ist Kind von Ablage(div)
+        div.innerHTML = playerCards[index].value;                    // fügt value, zu individueller Stelle einer Karte in playercards, hinzu
+        div.classList.add(playerCards[index].color);                 // erstellt Klasse zu zum persönlichen index von Handkarten bezogen auf das Array color
+        playerCards.splice(index, 1);                                // den Handkarten wird jeweils eine Karte entfernt, Karte wird aus index gewählt
+        showMyCards();                                               // übrig geblieben Karten werden angezeigt
     }
 
 
