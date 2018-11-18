@@ -1,13 +1,15 @@
 /*Aufgabe: Aufgabe 4 - Weihnachtsbaumkonfigurator
 Name: Nicole Burmistrack
 Matrikel: 259228
-Datum: 15.11.2018
+Datum: 18.11.2018
     
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
 */
 
 namespace xmasTreeShop {
 
+    
+    // EventListener
 
     document.addEventListener("DOMContentLoaded", createProducts);
     document.addEventListener("DOMContentLoaded", anotherOption);
@@ -168,7 +170,7 @@ namespace xmasTreeShop {
 
 
 
-        //delivery options
+        //verkäferoptionen
         
         HTML += "<fieldset>";
         HTML += "<legend>Delivery options</legend>";
@@ -181,7 +183,7 @@ namespace xmasTreeShop {
 
 
 
-        //buyer info
+        //Verkäufer info
         
         HTML += "<fieldset>";
         HTML += "<legend>Buyer Information</legend>";
@@ -219,18 +221,17 @@ namespace xmasTreeShop {
 
 
 
-    //Handle Change Funktionen  
+    //Handle Change  
     function handleChange(_event: Event): void {
 
 
         let target: HTMLInputElement = <HTMLInputElement>_event.target;
-        //trees
+       
         if (target.id == "trees") {
             let node: HTMLElement = document.getElementById("treeshtml");
             let value: string = target.value;
             let priceIndex: number = parseInt(value.substr(0, 1));
             treePrice = xmasTree[priceIndex].price;
-            //console.log(priceTree);
             let childNodeHTML: string;
 
             childNodeHTML = "";
@@ -241,7 +242,7 @@ namespace xmasTreeShop {
             node.innerHTML = childNodeHTML;
         }
 
-        //balls
+        //Weihnachtskugeln
         if (target.id == "bulbs") {
             let node: HTMLElement = document.getElementById("bulbhtml");
             let value: string = target.value;
@@ -309,7 +310,7 @@ namespace xmasTreeShop {
         }
 
         
-        //Ornaments
+        //Ornamente
         if (target.id == "ornaments") {
             let node: HTMLElement = document.getElementById("ornamenthtml");
             let value: string = target.value;
@@ -377,7 +378,7 @@ namespace xmasTreeShop {
         }
 
 
-        //tree stands
+        //Baumfüße
         if (target.name == "Radiogroup") {
             let node: HTMLElement = document.getElementById("standhtml");
             let value: string = target.value;
@@ -395,7 +396,7 @@ namespace xmasTreeShop {
         }
 
 
-        //delivery options
+        //Versandoptionen
         if (target.name == "Radiogroup1") {
             let node: HTMLElement = document.getElementById("deliveryhtml");
             let value: string = target.value;
@@ -415,7 +416,7 @@ namespace xmasTreeShop {
 
 
 
-        //Buyer information
+        //Käufer Info
         if (target.id == "adress") {
             let node: HTMLElement = document.getElementById("adresshtml");
             adress = target.value;
@@ -487,7 +488,7 @@ namespace xmasTreeShop {
 
 
 
-        //Berechnung des Gesamtpreises
+        //Gesamtpreis wird berechnet
         let node: HTMLElement = document.getElementById("endpricehtml");
         let HTML: string;
 
@@ -501,7 +502,7 @@ namespace xmasTreeShop {
 
 
 
-    //Progress. Wurde schon alles ausgewählt? Wenn ja--> nichts, wenn nein--> I'm sorry....
+   
     function checkProgress(_event: Event): void {
         if (mail == "" || extra == "" || firstname == "" || surname == "" || adress == "" || treePrice == 0 || standPrice == 0 || ballPrice == 0 || lamettaPrice == 0 || candlePrice == 0 || deliveryPrice == 0 || ballAmount == 0 || lamettaAmount == 0 || candleAmount == 0) {
             document.getElementById("mustSelect").innerHTML = "Something's missing";

@@ -1,12 +1,13 @@
 /*Aufgabe: Aufgabe 4 - Weihnachtsbaumkonfigurator
 Name: Nicole Burmistrack
 Matrikel: 259228
-Datum: 15.11.2018
+Datum: 18.11.2018
     
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
 */
 var xmasTreeShop;
 (function (xmasTreeShop) {
+    // EventListener
     document.addEventListener("DOMContentLoaded", createProducts);
     document.addEventListener("DOMContentLoaded", anotherOption);
     function anotherOption(_event) {
@@ -116,7 +117,7 @@ var xmasTreeShop;
         }
         HTML += "</fieldset>";
         HTML += "<br>";
-        //delivery options
+        //verkäferoptionen
         HTML += "<fieldset>";
         HTML += "<legend>Delivery options</legend>";
         for (let arrayNumber = 0; arrayNumber < xmasTreeShop.delivery.length; arrayNumber++) {
@@ -125,7 +126,7 @@ var xmasTreeShop;
         }
         HTML += "</fieldset>";
         HTML += "<br>";
-        //buyer info
+        //Verkäufer info
         HTML += "<fieldset>";
         HTML += "<legend>Buyer Information</legend>";
         HTML += "<input id='surname' type='text' name='Surname' placeholder='Surname'/>";
@@ -142,16 +143,14 @@ var xmasTreeShop;
         HTML += "</fieldset>";
         node.innerHTML += HTML;
     }
-    //Handle Change Funktionen  
+    //Handle Change  
     function handleChange(_event) {
         let target = _event.target;
-        //trees
         if (target.id == "trees") {
             let node = document.getElementById("treeshtml");
             let value = target.value;
             let priceIndex = parseInt(value.substr(0, 1));
             treePrice = xmasTreeShop.xmasTree[priceIndex].price;
-            //console.log(priceTree);
             let childNodeHTML;
             childNodeHTML = "";
             childNodeHTML += "<a>";
@@ -159,7 +158,7 @@ var xmasTreeShop;
             childNodeHTML += "</a>";
             node.innerHTML = childNodeHTML;
         }
-        //balls
+        //Weihnachtskugeln
         if (target.id == "bulbs") {
             let node = document.getElementById("bulbhtml");
             let value = target.value;
@@ -209,7 +208,7 @@ var xmasTreeShop;
             HTML += "</a>";
             node.innerHTML = HTML;
         }
-        //Ornaments
+        //Ornamente
         if (target.id == "ornaments") {
             let node = document.getElementById("ornamenthtml");
             let value = target.value;
@@ -259,7 +258,7 @@ var xmasTreeShop;
             HTML += "</a>";
             node.innerHTML = HTML;
         }
-        //tree stands
+        //Baumfüße
         if (target.name == "Radiogroup") {
             let node = document.getElementById("standhtml");
             let value = target.value;
@@ -272,7 +271,7 @@ var xmasTreeShop;
             HTML += "</a>";
             node.innerHTML = HTML;
         }
-        //delivery options
+        //Versandoptionen
         if (target.name == "Radiogroup1") {
             let node = document.getElementById("deliveryhtml");
             let value = target.value;
@@ -285,7 +284,7 @@ var xmasTreeShop;
             HTML += "</a>";
             node.innerHTML = HTML;
         }
-        //Buyer information
+        //Käufer Info
         if (target.id == "adress") {
             let node = document.getElementById("adresshtml");
             adress = target.value;
@@ -336,7 +335,7 @@ var xmasTreeShop;
             HTML += "</a>";
             node.innerHTML = HTML;
         }
-        //Berechnung des Gesamtpreises
+        //Gesamtpreis wird berechnet
         let node = document.getElementById("endpricehtml");
         let HTML;
         HTML = "";
@@ -346,7 +345,6 @@ var xmasTreeShop;
         HTML += "</a>";
         node.innerHTML = HTML;
     }
-    //Progress. Wurde schon alles ausgewählt? Wenn ja--> nichts, wenn nein--> I'm sorry....
     function checkProgress(_event) {
         if (mail == "" || extra == "" || firstname == "" || surname == "" || adress == "" || treePrice == 0 || standPrice == 0 || ballPrice == 0 || lamettaPrice == 0 || candlePrice == 0 || deliveryPrice == 0 || ballAmount == 0 || lamettaAmount == 0 || candleAmount == 0) {
             document.getElementById("mustSelect").innerHTML = "Something's missing";
