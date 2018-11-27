@@ -468,7 +468,7 @@ namespace xmasTreeShop2 {
             let node: HTMLElement = document.getElementById("bulbhtml1");
             let value: string = target.value;
             let _price: number = parseInt(value.substr(0, 1));
-            ballPrice = xmasBulbs[_price].price;
+            ballPrice1 = xmasBulbs[_price].price;
 
             let HTML: string;
 
@@ -501,7 +501,7 @@ namespace xmasTreeShop2 {
             let node: HTMLElement = document.getElementById("bulbhtml2");
             let value: string = target.value;
             let _price: number = parseInt(value.substr(0, 1));
-            ballPrice = xmasBulbs[_price].price;
+            ballPrice2 = xmasBulbs[_price].price;
 
             let HTML: string;
 
@@ -568,7 +568,7 @@ namespace xmasTreeShop2 {
             let node: HTMLElement = document.getElementById("candlehtml1");
             let value: string = target.value;
             let _price: number = parseInt(value.substr(0, 1));
-            candlePrice = xmasCandles[_price].price;
+            candlePrice1 = xmasCandles[_price].price;
 
             let HTML: string;
 
@@ -601,7 +601,7 @@ namespace xmasTreeShop2 {
             let node: HTMLElement = document.getElementById("candlehtml2");
             let value: string = target.value;
             let _price: number = parseInt(value.substr(0, 1));
-            candlePrice = xmasCandles[_price].price;
+            candlePrice2 = xmasCandles[_price].price;
 
             let HTML: string;
 
@@ -668,7 +668,7 @@ namespace xmasTreeShop2 {
             let node: HTMLElement = document.getElementById("ornamenthtml1");
             let value: string = target.value;
             let _price: number = parseInt(value.substr(0, 1));
-            ornamentPrice = xmasOrnaments[_price].price;
+            ornamentPrice1 = xmasOrnaments[_price].price;
 
             let HTML: string;
 
@@ -701,7 +701,7 @@ namespace xmasTreeShop2 {
             let node: HTMLElement = document.getElementById("ornamenthtml2");
             let value: string = target.value;
             let _price: number = parseInt(value.substr(0, 1));
-            ornamentPrice = xmasOrnaments[_price].price;
+            ornamentPrice2 = xmasOrnaments[_price].price;
 
             let HTML: string;
 
@@ -768,7 +768,7 @@ namespace xmasTreeShop2 {
             let node: HTMLElement = document.getElementById("lamettahtml1");
             let value: string = target.value;
             let _price: number = parseInt(value.substr(0, 1));
-            lamettaPrice = lametta[_price].price;
+            lamettaPrice1 = lametta[_price].price;
 
             let HTML: string;
 
@@ -802,7 +802,7 @@ namespace xmasTreeShop2 {
             let node: HTMLElement = document.getElementById("lamettahtml2");
             let value: string = target.value;
             let _price: number = parseInt(value.substr(0, 1));
-            lamettaPrice = lametta[_price].price;
+            lamettaPrice2 = lametta[_price].price;
 
             let HTML: string;
 
