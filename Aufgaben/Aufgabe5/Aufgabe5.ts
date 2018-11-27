@@ -484,7 +484,7 @@ namespace xmasTreeShop2 {
             let node: HTMLElement = document.getElementById("allbulbs1");
             let value: string = target.value;
             let _number: number = parseInt(value.substr(1, 2));
-            ballAmount = _number;
+            ballAmount1 = _number;
 
             let HTML: string;
 
@@ -517,7 +517,7 @@ namespace xmasTreeShop2 {
             let node: HTMLElement = document.getElementById("allbulbs2");
             let value: string = target.value;
             let _number: number = parseInt(value.substr(1, 2));
-            ballAmount = _number;
+            ballAmount2 = _number;
 
             let HTML: string;
 
@@ -584,7 +584,7 @@ namespace xmasTreeShop2 {
             let node: HTMLElement = document.getElementById("candleamounthtml1");
             let value: string = target.value;
             let _number: number = parseInt(value.substr(1, 2));
-            candleAmount = _number;
+            candleAmount1 = _number;
 
             let HTML: string;
 
@@ -617,7 +617,7 @@ namespace xmasTreeShop2 {
             let node: HTMLElement = document.getElementById("candleamounthtml2");
             let value: string = target.value;
             let _number: number = parseInt(value.substr(1, 2));
-            candleAmount = _number;
+            candleAmount2 = _number;
 
             let HTML: string;
 
@@ -684,7 +684,7 @@ namespace xmasTreeShop2 {
             let node: HTMLElement = document.getElementById("ornamentamounthtml1");
             let value: string = target.value;
             let _number: number = parseInt(value.substr(1, 2));
-            ornamentAmount = _number;
+            ornamentAmount1 = _number;
 
             let HTML: string;
 
@@ -717,7 +717,7 @@ namespace xmasTreeShop2 {
             let node: HTMLElement = document.getElementById("ornamentamounthtml2");
             let value: string = target.value;
             let _number: number = parseInt(value.substr(1, 2));
-            ornamentAmount = _number;
+            ornamentAmount2 = _number;
 
             let HTML: string;
 
@@ -784,7 +784,7 @@ namespace xmasTreeShop2 {
             let node: HTMLElement = document.getElementById("lamettaamounthtml1");
             let value: string = target.value;
             let _number: number = parseInt(value.substr(1, 2));
-            lamettaAmount = _number;
+            lamettaAmount1 = _number;
 
             let HTML: string;
 
@@ -818,7 +818,7 @@ namespace xmasTreeShop2 {
             let node: HTMLElement = document.getElementById("lamettaamounthtml2");
             let value: string = target.value;
             let _number: number = parseInt(value.substr(1, 2));
-            lamettaAmount = _number;
+            lamettaAmount2 = _number;
 
             let HTML: string;
 
