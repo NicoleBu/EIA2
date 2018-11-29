@@ -1,4 +1,4 @@
-namespace xmasTreeShop2 {
+namespace xmasTreeShop3 {
     
 export interface Products {
     name: string;
