@@ -6,7 +6,7 @@ Datum: 21.11.2018
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
 */
 
-namespace xmasTreeShop3 {
+namespace xmasTreeShop2 {
 
     
     // EventListener
