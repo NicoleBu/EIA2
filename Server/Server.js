@@ -18,7 +18,7 @@ var L06_SendData;
         "I hear voices"; //wird durch console.log auf der Browser Konsole ausgegeben
         _response.setHeader("content-type", "text/html; charset=utf-8"); //Reaktion in Form von Information wird als Text, ("content-type", "text/html; charset=utf-8"), in festgelegtem Header ausgegeben.
         _response.setHeader("Access-Control-Allow-Origin", "*"); //Reaktion in Form von Information wird als Text, ("Access-Control-Allow-Origin", "*"),  in festgelegtem Header ausgegeben.
-        _response.write(_request.url); //_request greift auf die URL aus _request zu
+        _response.write(_request.url); //_response greift auf die URL aus _request zu
         _response.end(); // _response wird beendet
     }
 })(L06_SendData || (L06_SendData = {}));
