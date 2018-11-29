@@ -8,4 +8,4 @@ var xmasTreeShop3;
     xmasTreeShop3.treeStands = [{ name: "black,", price: 9.99 }, { name: "brown,", price: 9.99 }, { name: "green,", price: 9.99 }, { name: "gold,", price: 11.99 }, { name: "silver,", price: 11.99 }];
     xmasTreeShop3.delivery = [{ name: "Standard", price: 25 }, { name: "Express", price: 34.99 }, { name: "Fast", price: 49.99 }];
 })(xmasTreeShop3 || (xmasTreeShop3 = {}));
-//# sourceMappingURL=merchant.js.map
+//# sourceMappingURL=merchant6.js.map
