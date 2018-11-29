@@ -24,5 +24,6 @@ namespace L06_SendData {  // über den namespace werden Objekte in einer Hierarc
         _response.write(_request.url); //_request greift auf die URL aus _request zu
         
         _response.end(); // _response wird beendet
+        
     }
 }
