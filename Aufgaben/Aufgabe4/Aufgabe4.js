@@ -63,7 +63,7 @@ var xmasTreeShop;
         //Create candles
         HTML += "<fieldset>";
         HTML += "<legend>Candles</legend>";
-        HTML += "<select name='Select' id='candles'>";
+        HTML += "<checkbox name='Select' id='candles'>";
         for (let arrayNumber = 0; arrayNumber < xmasTreeShop.xmasCandles.length; arrayNumber++) {
             HTML += "<option value='" + arrayNumber + xmasTreeShop.xmasCandles[arrayNumber].name + " " + xmasTreeShop.xmasCandles[arrayNumber].price + " €'>" + xmasTreeShop.xmasCandles[arrayNumber].name + " " + xmasTreeShop.xmasCandles[arrayNumber].price + " €</option>";
         }
