@@ -1,3 +1,11 @@
+/*Aufgabe: Aufgabe 7.1
+Name: Nicole Burmistrack
+Matrikel: 259228
+Datum: 06.12.2018
+    
+Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
+*/
+
 import * as Http from "http";
 
 import * as Url from "url";
