@@ -54,7 +54,7 @@ var xmasTreeShopA7;
         //Create Trees
         HTML += "<fieldset>";
         HTML += "<legend>Design your tree</legend>";
-        HTML += "<select name='Select' id='trees'>";
+        HTML += "<select name='Tree' id='trees'>";
         for (let arrayNumber = 0; arrayNumber < xmasTreeShopA7.xmasTree.length; arrayNumber++) {
             HTML += "<option value='" + arrayNumber + xmasTreeShopA7.xmasTree[arrayNumber].name + " " + xmasTreeShopA7.xmasTree[arrayNumber].price + " €'>" + xmasTreeShopA7.xmasTree[arrayNumber].name + " " + xmasTreeShopA7.xmasTree[arrayNumber].price + " €</option>";
         }
@@ -63,13 +63,13 @@ var xmasTreeShopA7;
         //Create christmas bulbs
         HTML += "<fieldset>";
         HTML += "<legend>Christmas bulbs</legend>";
-        HTML += "<select name='Select' id='bulbs'>";
+        HTML += "<select name='Bulbs 1' id='bulbs'>";
         for (let arrayNumber = 0; arrayNumber < xmasTreeShopA7.xmasBulbs.length; arrayNumber++) {
             HTML += "<option value='" + arrayNumber + xmasTreeShopA7.xmasBulbs[arrayNumber].name + " " + xmasTreeShopA7.xmasBulbs[arrayNumber].price + " €'>" + xmasTreeShopA7.xmasBulbs[arrayNumber].name + " " + xmasTreeShopA7.xmasBulbs[arrayNumber].price + " €</option>";
         }
         HTML += "</select>";
         HTML += "<br><br>";
-        HTML += "<select name='Select' id='allBulbs'>";
+        HTML += "<select name='Bulbs 1' id='allBulbs'>";
         for (let amountNumber = 0; amountNumber < 5; amountNumber++) {
             HTML += "<option value='*" + amountNumber + "'>" + amountNumber + "</option>";
         }
@@ -77,13 +77,13 @@ var xmasTreeShopA7;
         HTML += "<br>";
         //further option1
         HTML += "<p>Further option 1:</p>";
-        HTML += "<select name='Select' id='bulbs1'>";
+        HTML += "<select name='Bulbs 2' id='bulbs1'>";
         for (let arrayNumber = 0; arrayNumber < xmasTreeShopA7.xmasBulbs.length; arrayNumber++) {
             HTML += "<option value='" + arrayNumber + xmasTreeShopA7.xmasBulbs[arrayNumber].name + " " + xmasTreeShopA7.xmasBulbs[arrayNumber].price + " €'>" + xmasTreeShopA7.xmasBulbs[arrayNumber].name + " " + xmasTreeShopA7.xmasBulbs[arrayNumber].price + " €</option>";
         }
         HTML += "</select>";
         HTML += "<br><br>";
-        HTML += "<select name='Select' id='allBulbs1'>";
+        HTML += "<select name='Bulbs 2' id='allBulbs1'>";
         for (let amountNumber = 0; amountNumber < 5; amountNumber++) {
             HTML += "<option value='*" + amountNumber + "'>" + amountNumber + "</option>";
         }
@@ -91,13 +91,13 @@ var xmasTreeShopA7;
         HTML += "<br>";
         //further option2
         HTML += "<p>Further option 2:</p>";
-        HTML += "<select name='Select' id='bulbs2'>";
+        HTML += "<select name='Bulbs 3' id='bulbs2'>";
         for (let arrayNumber = 0; arrayNumber < xmasTreeShopA7.xmasBulbs.length; arrayNumber++) {
             HTML += "<option value='" + arrayNumber + xmasTreeShopA7.xmasBulbs[arrayNumber].name + " " + xmasTreeShopA7.xmasBulbs[arrayNumber].price + " €'>" + xmasTreeShopA7.xmasBulbs[arrayNumber].name + " " + xmasTreeShopA7.xmasBulbs[arrayNumber].price + " €</option>";
         }
         HTML += "</select>";
         HTML += "<br><br>";
-        HTML += "<select name='Select' id='allBulbs2'>";
+        HTML += "<select name='Bulbs 3' id='allBulbs2'>";
         for (let amountNumber = 0; amountNumber < 5; amountNumber++) {
             HTML += "<option value='*" + amountNumber + "'>" + amountNumber + "</option>";
         }
@@ -107,39 +107,39 @@ var xmasTreeShopA7;
         //Create candles
         HTML += "<fieldset>";
         HTML += "<legend>Candles</legend>";
-        HTML += "<select name='Select' id='candles'>";
+        HTML += "<select name='Candles 1' id='candles'>";
         for (let arrayNumber = 0; arrayNumber < xmasTreeShopA7.xmasCandles.length; arrayNumber++) {
             HTML += "<option value='" + arrayNumber + xmasTreeShopA7.xmasCandles[arrayNumber].name + " " + xmasTreeShopA7.xmasCandles[arrayNumber].price + " €'>" + xmasTreeShopA7.xmasCandles[arrayNumber].name + " " + xmasTreeShopA7.xmasCandles[arrayNumber].price + " €</option>";
         }
         HTML += "</select>";
         HTML += "<br><br>";
-        HTML += "<select name='Select' id='amountCandles'>";
+        HTML += "<select name='Candles 1' id='amountCandles'>";
         for (let amountNumber = 0; amountNumber < 5; amountNumber++) {
             HTML += "<option value='*" + amountNumber + "'>" + amountNumber + "</option>";
         }
         HTML += "</select>";
         //further option1
         HTML += "<p>Further option 1:</p>";
-        HTML += "<select name='Select' id='candles1'>";
+        HTML += "<select name='Candles 2' id='candles1'>";
         for (let arrayNumber = 0; arrayNumber < xmasTreeShopA7.xmasCandles.length; arrayNumber++) {
             HTML += "<option value='" + arrayNumber + xmasTreeShopA7.xmasCandles[arrayNumber].name + " " + xmasTreeShopA7.xmasCandles[arrayNumber].price + " €'>" + xmasTreeShopA7.xmasCandles[arrayNumber].name + " " + xmasTreeShopA7.xmasCandles[arrayNumber].price + " €</option>";
         }
         HTML += "</select>";
         HTML += "<br><br>";
-        HTML += "<select name='Select' id='amountCandles1'>";
+        HTML += "<select name='Candles 2' id='amountCandles1'>";
         for (let amountNumber = 0; amountNumber < 5; amountNumber++) {
             HTML += "<option value='*" + amountNumber + "'>" + amountNumber + "</option>";
         }
         HTML += "</select>";
         //further option2
         HTML += "<p>Further option 2:</p>";
-        HTML += "<select name='Select' id='candles2'>";
+        HTML += "<select name='Candles 3' id='candles2'>";
         for (let arrayNumber = 0; arrayNumber < xmasTreeShopA7.xmasCandles.length; arrayNumber++) {
             HTML += "<option value='" + arrayNumber + xmasTreeShopA7.xmasCandles[arrayNumber].name + " " + xmasTreeShopA7.xmasCandles[arrayNumber].price + " €'>" + xmasTreeShopA7.xmasCandles[arrayNumber].name + " " + xmasTreeShopA7.xmasCandles[arrayNumber].price + " €</option>";
         }
         HTML += "</select>";
         HTML += "<br><br>";
-        HTML += "<select name='Select' id='amountCandles2'>";
+        HTML += "<select name='Candles 3' id='amountCandles2'>";
         for (let amountNumber = 0; amountNumber < 5; amountNumber++) {
             HTML += "<option value='*" + amountNumber + "'>" + amountNumber + "</option>";
         }
@@ -149,39 +149,39 @@ var xmasTreeShopA7;
         //Create ornaments
         HTML += "<fieldset>";
         HTML += "<legend>Ornaments</legend>";
-        HTML += "<select name='Select' id='ornaments'>";
+        HTML += "<select name='Ornaments 1' id='ornaments'>";
         for (let arrayNumber = 0; arrayNumber < xmasTreeShopA7.xmasOrnaments.length; arrayNumber++) {
             HTML += "<option value='" + arrayNumber + xmasTreeShopA7.xmasOrnaments[arrayNumber].name + " " + xmasTreeShopA7.xmasOrnaments[arrayNumber].price + " €'>" + xmasTreeShopA7.xmasOrnaments[arrayNumber].name + " " + xmasTreeShopA7.xmasOrnaments[arrayNumber].price + " €</option>";
         }
         HTML += "</select>";
         HTML += "<br><br>";
-        HTML += "<select name='Select' id='amountOrnaments'>";
+        HTML += "<select name='Ornaments 1' id='amountOrnaments'>";
         for (let amountNumber = 0; amountNumber < 5; amountNumber++) {
             HTML += "<option value='*" + amountNumber + "'>" + amountNumber + "</option>";
         }
         HTML += "</select>";
         //further option 1
         HTML += "<p>Further option 1:</p>";
-        HTML += "<select name='Select' id='ornaments1'>";
+        HTML += "<select name='Ornaments 2' id='ornaments1'>";
         for (let arrayNumber = 0; arrayNumber < xmasTreeShopA7.xmasOrnaments.length; arrayNumber++) {
             HTML += "<option value='" + arrayNumber + xmasTreeShopA7.xmasOrnaments[arrayNumber].name + " " + xmasTreeShopA7.xmasOrnaments[arrayNumber].price + " €'>" + xmasTreeShopA7.xmasOrnaments[arrayNumber].name + " " + xmasTreeShopA7.xmasOrnaments[arrayNumber].price + " €</option>";
         }
         HTML += "</select>";
         HTML += "<br><br>";
-        HTML += "<select name='Select' id='amountOrnaments1'>";
+        HTML += "<select name='Ornaments 2' id='amountOrnaments1'>";
         for (let amountNumber = 0; amountNumber < 5; amountNumber++) {
             HTML += "<option value='*" + amountNumber + "'>" + amountNumber + "</option>";
         }
         HTML += "</select>";
         //further option 2
         HTML += "<p>Further option 2:</p>";
-        HTML += "<select name='Select' id='ornaments2'>";
+        HTML += "<select name='Ornaments 3' id='ornaments2'>";
         for (let arrayNumber = 0; arrayNumber < xmasTreeShopA7.xmasOrnaments.length; arrayNumber++) {
             HTML += "<option value='" + arrayNumber + xmasTreeShopA7.xmasOrnaments[arrayNumber].name + " " + xmasTreeShopA7.xmasOrnaments[arrayNumber].price + " €'>" + xmasTreeShopA7.xmasOrnaments[arrayNumber].name + " " + xmasTreeShopA7.xmasOrnaments[arrayNumber].price + " €</option>";
         }
         HTML += "</select>";
         HTML += "<br><br>";
-        HTML += "<select name='Select' id='amountOrnaments2'>";
+        HTML += "<select name='Ornaments 3' id='amountOrnaments2'>";
         for (let amountNumber = 0; amountNumber < 5; amountNumber++) {
             HTML += "<option value='*" + amountNumber + "'>" + amountNumber + "</option>";
         }
@@ -190,40 +190,40 @@ var xmasTreeShopA7;
         HTML += "<br>";
         //Create lametta
         HTML += "<fieldset>";
-        HTML += "<legend>Lametta</legend>";
-        HTML += "<select name='Select' id='Lametta'>";
+        HTML += "<legend>Lametta 1</legend>";
+        HTML += "<select name='Lametta' id='Lametta'>";
         for (let arrayNumber = 0; arrayNumber < xmasTreeShopA7.lametta.length; arrayNumber++) {
             HTML += "<option value='" + arrayNumber + xmasTreeShopA7.lametta[arrayNumber].name + " " + xmasTreeShopA7.lametta[arrayNumber].price + " €'>" + xmasTreeShopA7.lametta[arrayNumber].name + " " + xmasTreeShopA7.lametta[arrayNumber].price + " €</option>";
         }
         HTML += "</select>";
         HTML += "<br><br>";
-        HTML += "<select name='Select' id='amountLametta'>";
+        HTML += "<select name='Lametta 1' id='amountLametta'>";
         for (let amountNumber = 0; amountNumber < 10; amountNumber++) {
             HTML += "<option value='*" + amountNumber + "'>" + amountNumber + "</option>";
         }
         HTML += "</select>";
         //further option 1
         HTML += "<p>Further option 1:</p>";
-        HTML += "<select name='Select' id='Lametta1'>";
+        HTML += "<select name='Lametta 2' id='Lametta1'>";
         for (let arrayNumber = 0; arrayNumber < xmasTreeShopA7.lametta.length; arrayNumber++) {
             HTML += "<option value='" + arrayNumber + xmasTreeShopA7.lametta[arrayNumber].name + " " + xmasTreeShopA7.lametta[arrayNumber].price + " €'>" + xmasTreeShopA7.lametta[arrayNumber].name + " " + xmasTreeShopA7.lametta[arrayNumber].price + " €</option>";
         }
         HTML += "</select>";
         HTML += "<br><br>";
-        HTML += "<select name='Select' id='amountLametta1'>";
+        HTML += "<select name='Lametta 2' id='amountLametta1'>";
         for (let amountNumber = 0; amountNumber < 10; amountNumber++) {
             HTML += "<option value='*" + amountNumber + "'>" + amountNumber + "</option>";
         }
         HTML += "</select>";
         //further option 2
         HTML += "<p>Further option 2:</p>";
-        HTML += "<select name='Select' id='Lametta2'>";
+        HTML += "<select name='Lametta 3' id='Lametta2'>";
         for (let arrayNumber = 0; arrayNumber < xmasTreeShopA7.lametta.length; arrayNumber++) {
             HTML += "<option value='" + arrayNumber + xmasTreeShopA7.lametta[arrayNumber].name + " " + xmasTreeShopA7.lametta[arrayNumber].price + " €'>" + xmasTreeShopA7.lametta[arrayNumber].name + " " + xmasTreeShopA7.lametta[arrayNumber].price + " €</option>";
         }
         HTML += "</select>";
         HTML += "<br><br>";
-        HTML += "<select name='Select' id='amountLametta2'>";
+        HTML += "<select name='Lametta 3' id='amountLametta2'>";
         for (let amountNumber = 0; amountNumber < 10; amountNumber++) {
             HTML += "<option value='*" + amountNumber + "'>" + amountNumber + "</option>";
         }
@@ -234,7 +234,7 @@ var xmasTreeShopA7;
         HTML += "<fieldset>";
         HTML += "<legend>Tree stand</legend>";
         for (let arrayNumber = 0; arrayNumber < xmasTreeShopA7.treeStands.length; arrayNumber++) {
-            HTML += "<input type='radio' name='Radiogroup' value='" + arrayNumber + xmasTreeShopA7.treeStands[arrayNumber].name + " " + xmasTreeShopA7.treeStands[arrayNumber].price + " €'  id='stand" + arrayNumber + "' />";
+            HTML += "<input type='radio' name='Treestand' value='" + arrayNumber + xmasTreeShopA7.treeStands[arrayNumber].name + " " + xmasTreeShopA7.treeStands[arrayNumber].price + " €'  id='stand" + arrayNumber + "' />";
             HTML += "<label for='check" + arrayNumber + "'>" + xmasTreeShopA7.treeStands[arrayNumber].name + " " + xmasTreeShopA7.treeStands[arrayNumber].price + " €</label>";
         }
         HTML += "</fieldset>";
@@ -243,7 +243,7 @@ var xmasTreeShopA7;
         HTML += "<fieldset>";
         HTML += "<legend>Delivery options</legend>";
         for (let arrayNumber = 0; arrayNumber < xmasTreeShopA7.delivery.length; arrayNumber++) {
-            HTML += "<input type='radio' name='Radiogroup1' value='" + arrayNumber + xmasTreeShopA7.delivery[arrayNumber].name + " " + xmasTreeShopA7.delivery[arrayNumber].price + " €'  id='deliveryoption" + arrayNumber + "' />";
+            HTML += "<input type='radio' name='Delivery options' value='" + arrayNumber + xmasTreeShopA7.delivery[arrayNumber].name + " " + xmasTreeShopA7.delivery[arrayNumber].price + " €'  id='deliveryoption" + arrayNumber + "' />";
             HTML += "<label for='check" + arrayNumber + "'>" + xmasTreeShopA7.delivery[arrayNumber].name + " " + xmasTreeShopA7.delivery[arrayNumber].price + " €</label>";
         }
         HTML += "</fieldset>";
@@ -253,14 +253,14 @@ var xmasTreeShopA7;
         HTML += "<legend>Buyer Information</legend>";
         HTML += "<input id='surname' type='text' name='Surname' placeholder='Surname'/>";
         HTML += "<br><br>";
-        HTML += "<input id='firstname' type='text' name='name' placeholder='Name'/>";
+        HTML += "<input id='firstname' type='text' name='Name' placeholder='Name'/>";
         HTML += "<br><br>";
-        HTML += "<input id='mail' type='email' name='mail' placeholder='E-mail'/>";
+        HTML += "<input id='mail' type='email' name='E-Mail' placeholder='E-mail'/>";
         HTML += "<br><br>";
-        HTML += "<textarea id='adress' name='Area' cols='30' rows='4' placeholder='Your adress please' >";
+        HTML += "<textarea id='adress' name='Adress' cols='30' rows='4' placeholder='Your adress please' >";
         HTML += "</textarea>";
         HTML += "<br><br>";
-        HTML += "<textarea id='extra' name='Area' cols='30' rows='4' placeholder='Extra information' >";
+        HTML += "<textarea id='extra' name='Extra Information' cols='30' rows='4' placeholder='Extra information' >";
         HTML += "</textarea>";
         HTML += "</fieldset>";
         node.innerHTML += HTML;
@@ -573,7 +573,7 @@ var xmasTreeShopA7;
             node.innerHTML = HTML;
         }
         //Baumfüße
-        if (target.name == "Radiogroup") {
+        if (target.name == "Treestand") {
             let node = document.getElementById("standhtml");
             let value = target.value;
             let _price = parseInt(value.substr(0, 1));
@@ -586,7 +586,7 @@ var xmasTreeShopA7;
             node.innerHTML = HTML;
         }
         //Versandoptionen
-        if (target.name == "Radiogroup1") {
+        if (target.name == "Delivery options") {
             let node = document.getElementById("deliveryhtml");
             let value = target.value;
             let _price = parseInt(value.substr(0, 1));
