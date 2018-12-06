@@ -965,6 +965,8 @@ namespace xmasTreeShopA7 {
         else {
             document.getElementById("mustSelect").innerHTML = "";
         }
+        
+        
     }
 
 }
