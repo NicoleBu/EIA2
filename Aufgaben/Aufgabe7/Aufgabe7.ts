@@ -1,7 +1,7 @@
-/*Aufgabe: Aufgabe 5 - Weihnachtsbaumkonfigurator
+/*Aufgabe: Aufgabe 7
 Name: Nicole Burmistrack
 Matrikel: 259228
-Datum: 21.11.2018
+Datum: 06.12.2018
     
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
 */
