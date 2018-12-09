@@ -671,7 +671,7 @@ var xmasTreeShopA7;
             document.getElementById("mustSelect").innerHTML = "";
         }
     }
-    //Aufgabe 7.2
+    //hier beginnt Aufgabe 7.2!!!
     function init(_event) {
         document.getElementById("button").addEventListener("click", checkProgress);
         setupAsyncForm();

@@ -938,7 +938,7 @@ namespace xmasTreeShopA7 {
         
         
     }
-    //Aufgabe 7.2
+    //hier beginnt Aufgabe 7.2!!!
 
     function init(_event: Event): void {
         document.getElementById("button").addEventListener("click", checkProgress);
