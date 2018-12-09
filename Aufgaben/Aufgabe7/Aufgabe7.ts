@@ -13,13 +13,12 @@ namespace xmasTreeShopA7 {
 
     document.addEventListener("DOMContentLoaded", createProducts);
     document.addEventListener("DOMContentLoaded", anotherOption);
+    document.addEventListener("DOMContentLoaded", init);
 
     function anotherOption(_event: Event): void {
         let fieldset: HTMLElement = document.getElementById("fieldset");
         fieldset.addEventListener("change", handleChange);
     }
-
-
 
     let treePrice: number = 0;
     
@@ -39,11 +38,9 @@ namespace xmasTreeShopA7 {
     let lamettaPrice1: number = 0;
     let lamettaPrice2: number = 0;
     
-    
     let standPrice: number = 0;
     let deliveryPrice: number = 0;
     
-
     let ballAmount: number = 0;
     let ballAmount1: number = 0;
     let ballAmount2: number = 0;
@@ -65,6 +62,11 @@ namespace xmasTreeShopA7 {
     let adress: string = "";
     let mail: string = "";
     let extra: string = "";
+    
+    let address: string = "https://eia-2-ws.herokuapp.com/";
+    
+    
+
 
 
     //Main
@@ -86,31 +88,24 @@ namespace xmasTreeShopA7 {
         HTML += "<legend>Design your tree</legend>";
         HTML += "<select name='Tree' id='trees'>";
         for (let arrayNumber: number = 0; arrayNumber < xmasTree.length; arrayNumber++) {
-
         HTML += "<option value='" + arrayNumber + xmasTree[arrayNumber].name + " " + xmasTree[arrayNumber].price + " €'>" + xmasTree[arrayNumber].name + " " + xmasTree[arrayNumber].price + " €</option>";
         }
         HTML += "</select>";
         HTML += "<br><br>";
 
-
-
-
         //Create christmas bulbs
-        
         HTML += "<fieldset>";
         HTML += "<legend>Christmas bulbs</legend>";
         HTML += "<select name='Bulbs 1' id='bulbs'>";
         for (let arrayNumber: number = 0; arrayNumber < xmasBulbs.length; arrayNumber++) {
-
-            HTML += "<option value='" + arrayNumber + xmasBulbs[arrayNumber].name + " " + xmasBulbs[arrayNumber].price + " €'>" + xmasBulbs[arrayNumber].name + " " + xmasBulbs[arrayNumber].price + " €</option>";
+        HTML += "<option value='" + arrayNumber + xmasBulbs[arrayNumber].name + " " + xmasBulbs[arrayNumber].price + " €'>" + xmasBulbs[arrayNumber].name + " " + xmasBulbs[arrayNumber].price + " €</option>";
         }
         HTML += "</select>";
         HTML += "<br><br>";
 
         HTML += "<select name='Bulbs 1' id='allBulbs'>";
         for (let amountNumber: number = 0; amountNumber < 5; amountNumber++) {
-
-            HTML += "<option value='*" + amountNumber + "'>" + amountNumber + "</option>";
+        HTML += "<option value='*" + amountNumber + "'>" + amountNumber + "</option>";
         }
         HTML += "</select>";
         HTML += "<br>";
@@ -118,75 +113,55 @@ namespace xmasTreeShopA7 {
         //further option1
         
         HTML += "<p>Further option 1:</p>";
-
         HTML += "<select name='Bulbs 2' id='bulbs1'>";
         for (let arrayNumber: number = 0; arrayNumber < xmasBulbs.length; arrayNumber++) {
-
         HTML += "<option value='" + arrayNumber + xmasBulbs[arrayNumber].name + " " + xmasBulbs[arrayNumber].price + " €'>" + xmasBulbs[arrayNumber].name + " " + xmasBulbs[arrayNumber].price + " €</option>";
         }
         HTML += "</select>";
         HTML += "<br><br>";
         HTML += "<select name='Bulbs 2' id='allBulbs1'>";
         for (let amountNumber: number = 0; amountNumber < 5; amountNumber++) {
-
         HTML += "<option value='*" + amountNumber + "'>" + amountNumber + "</option>";
         }
         HTML += "</select>";
         HTML += "<br>";
         
-        
         //further option2
-        
         HTML += "<p>Further option 2:</p>";
-
         HTML += "<select name='Bulbs 3' id='bulbs2'>";
         for (let arrayNumber: number = 0; arrayNumber < xmasBulbs.length; arrayNumber++) {
-
         HTML += "<option value='" + arrayNumber + xmasBulbs[arrayNumber].name + " " + xmasBulbs[arrayNumber].price + " €'>" + xmasBulbs[arrayNumber].name + " " + xmasBulbs[arrayNumber].price + " €</option>";
         }
         HTML += "</select>";
         HTML += "<br><br>";
         HTML += "<select name='Bulbs 3' id='allBulbs2'>";
         for (let amountNumber: number = 0; amountNumber < 5; amountNumber++) {
-
         HTML += "<option value='*" + amountNumber + "'>" + amountNumber + "</option>";
         }
         HTML += "</select>";
-        
-        
         HTML += "</fieldset>";
         HTML += "<br>";
-
-
-
 
         //Create candles
         
         HTML += "<fieldset>";
         HTML += "<legend>Candles</legend>";
-        
         HTML += "<select name='Candles 1' id='candles'>";
         for (let arrayNumber: number = 0; arrayNumber < xmasCandles.length; arrayNumber++) {
-
         HTML += "<option value='" + arrayNumber + xmasCandles[arrayNumber].name + " " + xmasCandles[arrayNumber].price + " €'>" + xmasCandles[arrayNumber].name + " " + xmasCandles[arrayNumber].price + " €</option>";
         }
         HTML += "</select>";
         HTML += "<br><br>";
         HTML += "<select name='Candles 1' id='amountCandles'>";
         for (let amountNumber: number = 0; amountNumber < 5; amountNumber++) {
-
         HTML += "<option value='*" + amountNumber + "'>" + amountNumber + "</option>";
         }
         HTML += "</select>";
         
-        
         //further option1
-        
         HTML += "<p>Further option 1:</p>";
-        
         HTML += "<select name='Candles 2' id='candles1'>";
         for (let arrayNumber: number = 0; arrayNumber < xmasCandles.length; arrayNumber++) {
-
         HTML += "<option value='" + arrayNumber + xmasCandles[arrayNumber].name + " " + xmasCandles[arrayNumber].price + " €'>" + xmasCandles[arrayNumber].name + " " + xmasCandles[arrayNumber].price + " €</option>";
         }
         HTML += "</select>";
@@ -348,6 +323,7 @@ namespace xmasTreeShopA7 {
         
         HTML += "<fieldset>";
         HTML += "<legend>Tree stand</legend>";
+        HTML += "<select name='Tree Stand' id='treeStand'>";
         for (let arrayNumber: number = 0; arrayNumber < treeStands.length; arrayNumber++) {
             HTML += "<input type='radio' name='Treestand' value='" + arrayNumber + treeStands[arrayNumber].name + " " + treeStands[arrayNumber].price + " €'  id='stand" + arrayNumber + "' />";
             HTML += "<label for='check" + arrayNumber + "'>" + treeStands[arrayNumber].name + " " + treeStands[arrayNumber].price + " €</label>";
@@ -362,6 +338,7 @@ namespace xmasTreeShopA7 {
         
         HTML += "<fieldset>";
         HTML += "<legend>Delivery options</legend>";
+        HTML += "<select name='Delivery Options' id='deliveryOptions'>";
         for (let arrayNumber: number = 0; arrayNumber < delivery.length; arrayNumber++) {
             HTML += "<input type='radio' name='Delivery options' value='" + arrayNumber + delivery[arrayNumber].name + " " + delivery[arrayNumber].price + " €'  id='deliveryoption" + arrayNumber + "' />";
             HTML += "<label for='check" + arrayNumber + "'>" + delivery[arrayNumber].name + " " + delivery[arrayNumber].price + " €</label>";
@@ -938,10 +915,6 @@ namespace xmasTreeShopA7 {
             node.innerHTML = HTML;
         }
 
-
-
-
-
         //Gesamtpreis wird berechnet
         let node: HTMLElement = document.getElementById("endpricehtml");
         let HTML: string;
@@ -954,10 +927,7 @@ namespace xmasTreeShopA7 {
         node.innerHTML = HTML;
     }
 
-
-
-   
-    function checkProgress(_event: Event): void {
+        function checkProgress(_event: Event): void {
         if (mail == "" || extra == "" || firstname == "" || surname == "" || adress == "" || treePrice == 0 || standPrice == 0 || ballPrice == 0 || lamettaPrice == 0 || candlePrice == 0 || deliveryPrice == 0 || ballAmount == 0 || lamettaAmount == 0 || candleAmount == 0) {
             document.getElementById("mustSelect").innerHTML = "Something's missing";
         }
@@ -968,5 +938,195 @@ namespace xmasTreeShopA7 {
         
         
     }
+    //Aufgabe 7.2
+
+    function init(_event: Event): void {
+        document.getElementById("button").addEventListener("click", checkProgress);
+        setupAsyncForm();
+    }
+    function setupAsyncForm(): void {
+        let button: Element = document.querySelector("[type=button]");
+        button.addEventListener("click", handleClickOnAsync);
+    }
+    function handleClickOnAsync(_event: Event): void {
+        let checkout: string[] = [];
+        let items: NodeListOf<HTMLInputElement> = document.getElementsByTagName("input");
+
+
+        //trees 
+        let pickedTree: HTMLOptionElement = <HTMLOptionElement>document.getElementById("trees");
+        let color1: string = "Your order:    Christams tree: " + pickedTree.value.substr(1);
+        sendRequestWithCustomData(color1);
+        checkout.push(color1);
+
+        //balls
+        let pickedBalls: HTMLOptionElement = <HTMLOptionElement>document.getElementById("bulbs");
+        let color2: string = " Christmas bulbs: " + pickedBalls.value.substr(1);
+        sendRequestWithCustomData(color2);
+        checkout.push(color2);
+        let pickedBallsAmount: HTMLOptionElement = <HTMLOptionElement>document.getElementById("allBulbs");
+        let color3: string = "Bulbs amount: " + pickedBallsAmount.value.substr(1);
+        sendRequestWithCustomData(color3);
+        checkout.push(color3);
+        let pickedBalls1: HTMLOptionElement = <HTMLOptionElement>document.getElementById("bulbs1");
+        let color4: string = "Further option 1: " + pickedBalls1.value.substr(1);
+        sendRequestWithCustomData(color4);
+        checkout.push(color4);
+        let pickedBallsAmount1: HTMLOptionElement = <HTMLOptionElement>document.getElementById("allBulbs1");
+        let color5: string = "Bulbs amount 1: " + pickedBallsAmount1.value.substr(1);
+        sendRequestWithCustomData(color5);
+        checkout.push(color5);
+        let pickedBalls2: HTMLOptionElement = <HTMLOptionElement>document.getElementById("bulbs2");
+        let color6: string = "Further option 2: " + pickedBalls2.value.substr(1);
+        sendRequestWithCustomData(color6);
+        checkout.push(color6);
+        let pickedBallsAmount2: HTMLOptionElement = <HTMLOptionElement>document.getElementById("allBulbs2");
+        let color7: string = "Bulbs amount 2: " + pickedBallsAmount2.value.substr(1);
+        sendRequestWithCustomData(color7);
+        checkout.push(color7);
+        //candles
+        let pickedCandles: HTMLOptionElement = <HTMLOptionElement>document.getElementById("candles");
+        let color8: string = "Candles: " + pickedCandles.value.substr(1);
+        sendRequestWithCustomData(color8);
+        checkout.push(color8);
+        let pickedCandlesAmount: HTMLOptionElement = <HTMLOptionElement>document.getElementById("amountCandles");
+        let color9: string = "Candles amount: " + pickedCandlesAmount.value.substr(1);
+        sendRequestWithCustomData(color9);
+        checkout.push(color9);
+        let pickedCandles1: HTMLOptionElement = <HTMLOptionElement>document.getElementById("candles1");
+        let color10: string = "Further option 1: " + pickedCandles1.value.substr(1);
+        sendRequestWithCustomData(color10);
+        checkout.push(color10);
+        let pickedCandlesAmount1: HTMLOptionElement = <HTMLOptionElement>document.getElementById("amountCandles1");
+        let color11: string = "Candles amount 1: " + pickedCandlesAmount1.value.substr(1);
+        sendRequestWithCustomData(color11);
+        checkout.push(color11);
+        let pickedCandles2: HTMLOptionElement = <HTMLOptionElement>document.getElementById("candles2");
+        let color12: string = "Further option 2: " + pickedCandles2.value.substr(1);
+        sendRequestWithCustomData(color12);
+        checkout.push(color12);
+        let pickedCandlesAmount2: HTMLOptionElement = <HTMLOptionElement>document.getElementById("amountCandles2");
+        let color13: string = "Candles amount 2: " + pickedCandlesAmount2.value.substr(1);
+        sendRequestWithCustomData(color13);
+        checkout.push(color13);
+
+        //ornaments
+        let pickedOrnaments: HTMLOptionElement = <HTMLOptionElement>document.getElementById("ornaments");
+        let color14: string = "Ornaments: " + pickedOrnaments.value.substr(1);
+        sendRequestWithCustomData(color14);
+        checkout.push(color14);
+        let pickedOrnamentsAmount: HTMLOptionElement = <HTMLOptionElement>document.getElementById("amountOrnaments");
+        let color15: string = "Ornaments amount: " + pickedOrnamentsAmount.value.substr(1);
+        sendRequestWithCustomData(color15);
+        checkout.push(color15);
+        let pickedOrnaments1: HTMLOptionElement = <HTMLOptionElement>document.getElementById("ornaments1");
+        let color16: string = "Further option 1: " + pickedOrnaments1.value.substr(1);
+        sendRequestWithCustomData(color16);
+        checkout.push(color16);
+        let pickedOrnamentsAmount1: HTMLOptionElement = <HTMLOptionElement>document.getElementById("amountOrnaments1");
+        let color17: string = "Ornaments amount 1: " + pickedOrnamentsAmount1.value.substr(1);
+        sendRequestWithCustomData(color17);
+        checkout.push(color17);
+        let pickedOrnaments2: HTMLOptionElement = <HTMLOptionElement>document.getElementById("ornaments2");
+        let color18: string = "Further option 2: " + pickedOrnaments2.value.substr(1);
+        sendRequestWithCustomData(color18);
+        checkout.push(color18);
+        let pickedOrnamentsAmount2: HTMLOptionElement = <HTMLOptionElement>document.getElementById("amountOrnaments2");
+        let color19: string = "Ornaments amount 2: " + pickedOrnamentsAmount2.value.substr(1);
+        sendRequestWithCustomData(color19);
+        checkout.push(color19);
+
+        //lametta
+        let pickedLametta: HTMLOptionElement = <HTMLOptionElement>document.getElementById("Lametta");
+        let color20: string = "Lametta: " + pickedLametta.value.substr(1);
+        sendRequestWithCustomData(color20);
+        checkout.push(color20);
+        let pickedLamettaAmount: HTMLOptionElement = <HTMLOptionElement>document.getElementById("amountLametta");
+        let color21: string = "Lametta amount: " + pickedLamettaAmount.value.substr(1);
+        sendRequestWithCustomData(color21);
+        checkout.push(color21);
+        let pickedLametta1: HTMLOptionElement = <HTMLOptionElement>document.getElementById("Lametta1");
+        let color22: string = "Further option 1: " + pickedLametta1.value.substr(1);
+        sendRequestWithCustomData(color22);
+        checkout.push(color22);
+        let pickedLamettaAmount1: HTMLOptionElement = <HTMLOptionElement>document.getElementById("amountLametta1");
+        let color23: string = "Lametta amount 1: " + pickedLamettaAmount1.value.substr(1);
+        sendRequestWithCustomData(color23);
+        checkout.push(color23);
+        let pickedLametta2: HTMLOptionElement = <HTMLOptionElement>document.getElementById("Lametta2");
+        let color24: string = "Further option 2: " + pickedLametta2.value.substr(1);
+        sendRequestWithCustomData(color24);
+        checkout.push(color24);
+        let pickedLamettaAmount2: HTMLOptionElement = <HTMLOptionElement>document.getElementById("amountLametta2");
+        let color25: string = "Lametta amount 2: " + pickedLamettaAmount2.value.substr(1);
+        sendRequestWithCustomData(color25);
+        checkout.push(color25);
+
+        //stand
+        let pickedStand: HTMLOptionElement = <HTMLOptionElement>document.getElementById("treeStand");
+        let color26: string = "Tree stand: " + pickedStand.value.substr(1);
+        sendRequestWithCustomData(color26);
+        checkout.push(color26);
+
+        //adress
+        let pickedAdress: HTMLOptionElement = <HTMLOptionElement>document.getElementById("adress");
+        let color28: string = "Adress: " + pickedAdress.value.substr(1);
+        sendRequestWithCustomData(color28);
+        checkout.push(color28);
+
+        //surname
+        let pickedSurname: HTMLOptionElement = <HTMLOptionElement>document.getElementById("surname");
+        let color29: string = "Surname: " + pickedSurname.value.substr(1);
+        sendRequestWithCustomData(color29);
+        checkout.push(color29);
+
+        //name
+        let pickedName: HTMLOptionElement = <HTMLOptionElement>document.getElementById("firstname");
+        let color30: string = "Name: " + pickedName.value.substr(1);
+        sendRequestWithCustomData(color30);
+        checkout.push(color30);
+
+        //mail
+        let pickedMail: HTMLOptionElement = <HTMLOptionElement>document.getElementById("mail");
+        let color31: string = "Mail: " + pickedMail.value.substr(1);
+        sendRequestWithCustomData(color31);
+        checkout.push(color31);
+
+        //extra
+        let pickedExtra: HTMLOptionElement = <HTMLOptionElement>document.getElementById("extra");
+        let color32: string = "Extra: " + pickedExtra.value.substr(1);
+        sendRequestWithCustomData(color32);
+        checkout.push(color32);
+
+        for (let i: number = 0; i < items.length; i++) {
+            let article: HTMLInputElement = items[i];
+            if (Number(article.value) > 0) {
+                let color: string = article.name + " " + article.value + " " + article.title + " " + (Number(article.getAttribute("price")) * Number(article.value)) + " Euro";
+                sendRequestWithCustomData(color);
+                checkout.push(color);
+
+            }
+        }
+
+        alert(checkout);
+
+    }
+
+    function sendRequestWithCustomData(_color: string): void {
+        let xhr: XMLHttpRequest = new XMLHttpRequest();
+        xhr.open("GET", address + "?article=" + _color, true);
+        xhr.addEventListener("readystatechange", handleStateChange);
+        xhr.send();
+    }
+
+    function handleStateChange(_event: ProgressEvent): void {
+        var xhr: XMLHttpRequest = <XMLHttpRequest>_event.target;
+        if (xhr.readyState == XMLHttpRequest.DONE) {
+            console.log("ready: " + xhr.readyState, " | type: " + xhr.responseType, " | status:" + xhr.status, " | text:" + xhr.statusText);
+            console.log("response: " + xhr.response);
+        }
+    }
+
+
 
 }
