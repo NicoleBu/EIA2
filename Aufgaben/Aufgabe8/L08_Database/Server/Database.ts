@@ -42,8 +42,8 @@ export function insert(_doc: StudentData): void {
 function handleInsert(_e: Mongo.MongoError): void {
     console.log("Database insertion returned -> " + _e);
 }
-//function "find" for Matrikelnummer
-export function find(_matrikel: matrikelData, _callback: Function): void{
+
+export function find(_matrikel: matrikel1, _callback: Function): void {
     console.log(_matrikel);
     var cursor: Mongo.Cursor = students.find(_matrikel);
     cursor.toArray(prepareAnswer);
@@ -76,3 +76,4 @@ function prepareAnswer(_e: Mongo.MongoError, studentArray: StudentData[]): void 
             _callback(JSON.stringify(studentArray));
     }
 }
+

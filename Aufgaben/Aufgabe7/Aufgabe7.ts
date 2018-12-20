@@ -955,148 +955,148 @@ namespace xmasTreeShopA7 {
 
         //trees 
         let pickedTree: HTMLOptionElement = <HTMLOptionElement>document.getElementById("trees");
-        let color1: string = "Your order:    Christams tree: " + pickedTree.value.substr(1);
-        sendRequestWithCustomData(color1);
-        checkout.push(color1);
+        let tree: string = "Your order:    Christams tree: " + pickedTree.value.substr(1);
+        sendRequestWithCustomData(tree);
+        checkout.push(tree);
 
         //balls
         let pickedBalls: HTMLOptionElement = <HTMLOptionElement>document.getElementById("bulbs");
-        let color2: string = " Christmas bulbs: " + pickedBalls.value.substr(1);
-        sendRequestWithCustomData(color2);
-        checkout.push(color2);
+        let balls: string = " Christmas bulbs: " + pickedBalls.value.substr(1);
+        sendRequestWithCustomData(balls);
+        checkout.push(balls);
         let pickedBallsAmount: HTMLOptionElement = <HTMLOptionElement>document.getElementById("allBulbs");
-        let color3: string = "Bulbs amount: " + pickedBallsAmount.value.substr(1);
-        sendRequestWithCustomData(color3);
-        checkout.push(color3);
+        let balls2: string = "Bulbs amount: " + pickedBallsAmount.value.substr(1);
+        sendRequestWithCustomData(balls2);
+        checkout.push(balls2);
         let pickedBalls1: HTMLOptionElement = <HTMLOptionElement>document.getElementById("bulbs1");
-        let color4: string = "Further option 1: " + pickedBalls1.value.substr(1);
-        sendRequestWithCustomData(color4);
-        checkout.push(color4);
+        let balls3: string = "Further option 1: " + pickedBalls1.value.substr(1);
+        sendRequestWithCustomData(balls3);
+        checkout.push(balls3);
         let pickedBallsAmount1: HTMLOptionElement = <HTMLOptionElement>document.getElementById("allBulbs1");
-        let color5: string = "Bulbs amount 1: " + pickedBallsAmount1.value.substr(1);
-        sendRequestWithCustomData(color5);
-        checkout.push(color5);
+        let balls4: string = "Bulbs amount 1: " + pickedBallsAmount1.value.substr(1);
+        sendRequestWithCustomData(balls4);
+        checkout.push(balls4);
         let pickedBalls2: HTMLOptionElement = <HTMLOptionElement>document.getElementById("bulbs2");
-        let color6: string = "Further option 2: " + pickedBalls2.value.substr(1);
-        sendRequestWithCustomData(color6);
-        checkout.push(color6);
+        let balls5: string = "Further option 2: " + pickedBalls2.value.substr(1);
+        sendRequestWithCustomData(balls5);
+        checkout.push(balls5);
         let pickedBallsAmount2: HTMLOptionElement = <HTMLOptionElement>document.getElementById("allBulbs2");
-        let color7: string = "Bulbs amount 2: " + pickedBallsAmount2.value.substr(1);
-        sendRequestWithCustomData(color7);
-        checkout.push(color7);
+        let balls6: string = "Bulbs amount 2: " + pickedBallsAmount2.value.substr(1);
+        sendRequestWithCustomData(balls6);
+        checkout.push(balls6);
         //candles
         let pickedCandles: HTMLOptionElement = <HTMLOptionElement>document.getElementById("candles");
-        let color8: string = "Candles: " + pickedCandles.value.substr(1);
-        sendRequestWithCustomData(color8);
-        checkout.push(color8);
+        let candles: string = "Candles: " + pickedCandles.value.substr(1);
+        sendRequestWithCustomData(candles);
+        checkout.push(candles);
         let pickedCandlesAmount: HTMLOptionElement = <HTMLOptionElement>document.getElementById("amountCandles");
-        let color9: string = "Candles amount: " + pickedCandlesAmount.value.substr(1);
-        sendRequestWithCustomData(color9);
-        checkout.push(color9);
+        let candles1: string = "Candles amount: " + pickedCandlesAmount.value.substr(1);
+        sendRequestWithCustomData(candles1);
+        checkout.push(candles1);
         let pickedCandles1: HTMLOptionElement = <HTMLOptionElement>document.getElementById("candles1");
-        let color10: string = "Further option 1: " + pickedCandles1.value.substr(1);
-        sendRequestWithCustomData(color10);
-        checkout.push(color10);
+        let candles2: string = "Further option 1: " + pickedCandles1.value.substr(1);
+        sendRequestWithCustomData(candles2);
+        checkout.push(candles2);
         let pickedCandlesAmount1: HTMLOptionElement = <HTMLOptionElement>document.getElementById("amountCandles1");
-        let color11: string = "Candles amount 1: " + pickedCandlesAmount1.value.substr(1);
-        sendRequestWithCustomData(color11);
-        checkout.push(color11);
+        let candles3: string = "Candles amount 1: " + pickedCandlesAmount1.value.substr(1);
+        sendRequestWithCustomData(candles3);
+        checkout.push(candles3);
         let pickedCandles2: HTMLOptionElement = <HTMLOptionElement>document.getElementById("candles2");
-        let color12: string = "Further option 2: " + pickedCandles2.value.substr(1);
-        sendRequestWithCustomData(color12);
-        checkout.push(color12);
+        let candles4: string = "Further option 2: " + pickedCandles2.value.substr(1);
+        sendRequestWithCustomData(candles4);
+        checkout.push(candles4);
         let pickedCandlesAmount2: HTMLOptionElement = <HTMLOptionElement>document.getElementById("amountCandles2");
-        let color13: string = "Candles amount 2: " + pickedCandlesAmount2.value.substr(1);
-        sendRequestWithCustomData(color13);
-        checkout.push(color13);
+        let candles5: string = "Candles amount 2: " + pickedCandlesAmount2.value.substr(1);
+        sendRequestWithCustomData(candles5);
+        checkout.push(candles5);
 
         //ornaments
         let pickedOrnaments: HTMLOptionElement = <HTMLOptionElement>document.getElementById("ornaments");
-        let color14: string = "Ornaments: " + pickedOrnaments.value.substr(1);
-        sendRequestWithCustomData(color14);
-        checkout.push(color14);
+        let ornaments: string = "Ornaments: " + pickedOrnaments.value.substr(1);
+        sendRequestWithCustomData(ornaments);
+        checkout.push(ornaments);
         let pickedOrnamentsAmount: HTMLOptionElement = <HTMLOptionElement>document.getElementById("amountOrnaments");
-        let color15: string = "Ornaments amount: " + pickedOrnamentsAmount.value.substr(1);
-        sendRequestWithCustomData(color15);
-        checkout.push(color15);
+        let ornaments1: string = "Ornaments amount: " + pickedOrnamentsAmount.value.substr(1);
+        sendRequestWithCustomData(ornaments1);
+        checkout.push(ornaments1);
         let pickedOrnaments1: HTMLOptionElement = <HTMLOptionElement>document.getElementById("ornaments1");
-        let color16: string = "Further option 1: " + pickedOrnaments1.value.substr(1);
-        sendRequestWithCustomData(color16);
-        checkout.push(color16);
+        let ornaments2: string = "Further option 1: " + pickedOrnaments1.value.substr(1);
+        sendRequestWithCustomData(ornaments2);
+        checkout.push(ornaments2);
         let pickedOrnamentsAmount1: HTMLOptionElement = <HTMLOptionElement>document.getElementById("amountOrnaments1");
-        let color17: string = "Ornaments amount 1: " + pickedOrnamentsAmount1.value.substr(1);
-        sendRequestWithCustomData(color17);
-        checkout.push(color17);
+        let ornaments3: string = "Ornaments amount 1: " + pickedOrnamentsAmount1.value.substr(1);
+        sendRequestWithCustomData(ornaments3);
+        checkout.push(ornaments3);
         let pickedOrnaments2: HTMLOptionElement = <HTMLOptionElement>document.getElementById("ornaments2");
-        let color18: string = "Further option 2: " + pickedOrnaments2.value.substr(1);
-        sendRequestWithCustomData(color18);
-        checkout.push(color18);
+        let ornaments4: string = "Further option 2: " + pickedOrnaments2.value.substr(1);
+        sendRequestWithCustomData(ornaments4);
+        checkout.push(ornaments4);
         let pickedOrnamentsAmount2: HTMLOptionElement = <HTMLOptionElement>document.getElementById("amountOrnaments2");
-        let color19: string = "Ornaments amount 2: " + pickedOrnamentsAmount2.value.substr(1);
-        sendRequestWithCustomData(color19);
-        checkout.push(color19);
+        let ornaments5: string = "Ornaments amount 2: " + pickedOrnamentsAmount2.value.substr(1);
+        sendRequestWithCustomData(ornaments5);
+        checkout.push(ornaments5);
 
         //lametta
         let pickedLametta: HTMLOptionElement = <HTMLOptionElement>document.getElementById("Lametta");
-        let color20: string = "Lametta: " + pickedLametta.value.substr(1);
-        sendRequestWithCustomData(color20);
-        checkout.push(color20);
+        let lametta: string = "Lametta: " + pickedLametta.value.substr(1);
+        sendRequestWithCustomData(lametta);
+        checkout.push(lametta);
         let pickedLamettaAmount: HTMLOptionElement = <HTMLOptionElement>document.getElementById("amountLametta");
-        let color21: string = "Lametta amount: " + pickedLamettaAmount.value.substr(1);
-        sendRequestWithCustomData(color21);
-        checkout.push(color21);
+        let lametta1: string = "Lametta amount: " + pickedLamettaAmount.value.substr(1);
+        sendRequestWithCustomData(lametta1);
+        checkout.push(lametta1);
         let pickedLametta1: HTMLOptionElement = <HTMLOptionElement>document.getElementById("Lametta1");
-        let color22: string = "Further option 1: " + pickedLametta1.value.substr(1);
-        sendRequestWithCustomData(color22);
-        checkout.push(color22);
+        let lametta2: string = "Further option 1: " + pickedLametta1.value.substr(1);
+        sendRequestWithCustomData(lametta2);
+        checkout.push(lametta2);
         let pickedLamettaAmount1: HTMLOptionElement = <HTMLOptionElement>document.getElementById("amountLametta1");
-        let color23: string = "Lametta amount 1: " + pickedLamettaAmount1.value.substr(1);
-        sendRequestWithCustomData(color23);
-        checkout.push(color23);
+        let lametta3: string = "Lametta amount 1: " + pickedLamettaAmount1.value.substr(1);
+        sendRequestWithCustomData(lametta3);
+        checkout.push(lametta3);
         let pickedLametta2: HTMLOptionElement = <HTMLOptionElement>document.getElementById("Lametta2");
-        let color24: string = "Further option 2: " + pickedLametta2.value.substr(1);
-        sendRequestWithCustomData(color24);
-        checkout.push(color24);
+        let lametta4: string = "Further option 2: " + pickedLametta2.value.substr(1);
+        sendRequestWithCustomData(lametta4);
+        checkout.push(lametta4);
         let pickedLamettaAmount2: HTMLOptionElement = <HTMLOptionElement>document.getElementById("amountLametta2");
-        let color25: string = "Lametta amount 2: " + pickedLamettaAmount2.value.substr(1);
-        sendRequestWithCustomData(color25);
-        checkout.push(color25);
+        let lametta5: string = "Lametta amount 2: " + pickedLamettaAmount2.value.substr(1);
+        sendRequestWithCustomData(lametta5);
+        checkout.push(lametta5);
 
         //stand
         let pickedStand: HTMLOptionElement = <HTMLOptionElement>document.getElementById("treeStand");
-        let color26: string = "Tree stand: " + pickedStand.value.substr(1);
-        sendRequestWithCustomData(color26);
-        checkout.push(color26);
+        let treestand: string = "Tree stand: " + pickedStand.value.substr(1);
+        sendRequestWithCustomData(treestand);
+        checkout.push(treestand);
 
         //adress
         let pickedAdress: HTMLOptionElement = <HTMLOptionElement>document.getElementById("adress");
-        let color28: string = "Adress: " + pickedAdress.value.substr(1);
-        sendRequestWithCustomData(color28);
-        checkout.push(color28);
+        let adress: string = "Adress: " + pickedAdress.value.substr(1);
+        sendRequestWithCustomData(adress);
+        checkout.push(adress);
 
         //surname
         let pickedSurname: HTMLOptionElement = <HTMLOptionElement>document.getElementById("surname");
-        let color29: string = "Surname: " + pickedSurname.value.substr(1);
-        sendRequestWithCustomData(color29);
-        checkout.push(color29);
+        let surname: string = "Surname: " + pickedSurname.value.substr(1);
+        sendRequestWithCustomData(surname);
+        checkout.push(surname);
 
         //name
         let pickedName: HTMLOptionElement = <HTMLOptionElement>document.getElementById("firstname");
-        let color30: string = "Name: " + pickedName.value.substr(1);
-        sendRequestWithCustomData(color30);
-        checkout.push(color30);
+        let name: string = "Name: " + pickedName.value.substr(1);
+        sendRequestWithCustomData(name);
+        checkout.push(name);
 
         //mail
         let pickedMail: HTMLOptionElement = <HTMLOptionElement>document.getElementById("mail");
-        let color31: string = "Mail: " + pickedMail.value.substr(1);
-        sendRequestWithCustomData(color31);
-        checkout.push(color31);
+        let mail: string = "Mail: " + pickedMail.value.substr(1);
+        sendRequestWithCustomData(mail);
+        checkout.push(mail);
 
         //extra
         let pickedExtra: HTMLOptionElement = <HTMLOptionElement>document.getElementById("extra");
-        let color32: string = "Extra: " + pickedExtra.value.substr(1);
-        sendRequestWithCustomData(color32);
-        checkout.push(color32);
+        let extra: string = "Extra: " + pickedExtra.value.substr(1);
+        sendRequestWithCustomData(extra);
+        checkout.push(extra);
 
         for (let i: number = 0; i < items.length; i++) {
             let article: HTMLInputElement = items[i];

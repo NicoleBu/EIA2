@@ -12,8 +12,8 @@ let students;
 // running on heroku?
 if (process.env.NODE_ENV == "production") {
     //    databaseURL = "mongodb://username:password@hostname:port/database";
-    databaseURL = "mongodb://Testuser:testpasswort1@ds139122.mlab.com:39122/data";
-    databaseName = "data";
+    databaseURL = "mongodb://test:test1234@ds159112.mlab.com:59112/eia2";
+    databaseName = "eia2";
 }
 // try to connect to database, then activate callback "handleConnect" 
 Mongo.MongoClient.connect(databaseURL, handleConnect);
@@ -36,7 +36,6 @@ exports.insert = insert;
 function handleInsert(_e) {
     console.log("Database insertion returned -> " + _e);
 }
-//function "find" for Matrikelnummer
 function find(_matrikel, _callback) {
     console.log(_matrikel);
     var cursor = students.find(_matrikel);
