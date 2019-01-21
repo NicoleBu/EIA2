@@ -1,10 +1,11 @@
 var Aufgabe10;
 (function (Aufgabe10) {
     window.addEventListener("load", init);
-    let snow = [];
+    let fps = 25;
+    let snowflake = [];
     let child1 = [];
     let child2 = [];
-    let fps = 25;
+    let tree = [];
     let imgData;
     function init(_event) {
         let canvas = document.getElementsByTagName("canvas")[0];
@@ -14,41 +15,48 @@ var Aufgabe10;
         cloud1();
         cloud2();
         sun();
-        animationSnow();
-        animationChild1();
-        animationChild2();
-        imgData = Aufgabe10.crc2.getImageData(0, 0, 700, 1100);
-        update();
+        imgData = Aufgabe10.crc2.getImageData(0, 0, 500, 800);
+        for (let i = 0; i < 50; i++) {
+            let snow = new Aufgabe10.Snow();
+            snow.x = Math.random() * Aufgabe10.crc2.canvas.width;
+            snow.y = Math.random() * Aufgabe10.crc2.canvas.height;
+            snow.dx = Math.random() * 2 + 4;
+            snow.color = "ffffff";
+            snowflake.push(snow);
+        }
+        for (let i = 0; i < 5; i++) {
+            let child = new Aufgabe10.Child1();
+            child.x = 0;
+            child.y = Math.random() * 200 + 750;
+            child.dx = Math.random() * 3;
+            child.dy = -child.dx;
+            child1.push(child);
+        }
+        for (let i = 0; i < 5; i++) {
+            let child = new Aufgabe10.Child2();
+            child.x = 360;
+            child.y = Math.random() * 0 + 750;
+            child.dx = Math.random() * 3 - 5;
+            child.dy = -child.dx;
+            child2.push(child);
+        }
         for (let i = 0; i < 10; i++) {
-            let x = Math.floor(Math.random() * Aufgabe10.crc2.canvas.width);
-            let y = Math.floor(Math.random() * (350 - 500) + Aufgabe10.crc2.canvas.height);
-            trees(x, y);
-            for (let i = 0; i < 150; i++) {
-                let a = Math.floor(Math.random() * Aufgabe10.crc2.canvas.width);
-                let b = Math.floor(Math.random() * Aufgabe10.crc2.canvas.height);
-                snowflakes(a, b);
+            let trees = new Aufgabe10.Tree();
+            trees.x = Math.random() * Aufgabe10.crc2.canvas.width;
+            trees.y = Math.random() * Aufgabe10.crc2.canvas.height;
+            Aufgabe10.crc2.beginPath();
+            Aufgabe10.crc2.moveTo(0, 500);
+            Aufgabe10.crc2.bezierCurveTo(20, 200, 500, 310, 250, 190);
+            if (Aufgabe10.crc2.isPointInPath(trees.x, trees.y)) {
+                tree.push(trees);
+            }
+            else {
+                i--;
             }
         }
+        update();
     }
-    function update() {
-        Aufgabe10.crc2.putImageData(imgData, 0, 0);
-        window.setTimeout(update, 1000 / fps);
-        for (let i = 0; i < snow.length; i++) {
-            let snowflake = snow[i];
-            snowflake.move();
-            snowflake.draw();
-        }
-        for (let i = 0; i < child1.length; i++) {
-            let childone = child1[i];
-            childone.move();
-            childone.draw();
-        }
-        for (let i = 0; i < child2.length; i++) {
-            let childtwo = child2[i];
-            childtwo.move();
-            childtwo.draw();
-        }
-    }
+    //Himmel
     function sky() {
         Aufgabe10.crc2.fillStyle = "#98f5ff";
         Aufgabe10.crc2.fillRect(0, 0, Aufgabe10.crc2.canvas.width, 110);
@@ -59,12 +67,27 @@ var Aufgabe10;
         Aufgabe10.crc2.closePath();
         Aufgabe10.crc2.fill();
     }
+    //Rodelhang
     function hill() {
         Aufgabe10.crc2.beginPath();
         Aufgabe10.crc2.moveTo(0, 500);
         Aufgabe10.crc2.closePath();
         Aufgabe10.crc2.fill();
     }
+    //Sonne 
+    function sun() {
+        let x = 160;
+        let y = 50;
+        let radius = 35;
+        let startAngle = 0;
+        let endAngle = 2 * Math.PI;
+        Aufgabe10.crc2.moveTo(0, 0);
+        Aufgabe10.crc2.beginPath();
+        Aufgabe10.crc2.arc(x, y, radius, startAngle, endAngle, true);
+        Aufgabe10.crc2.fillStyle = "yellow";
+        Aufgabe10.crc2.fill();
+    }
+    //Wolken
     function cloud1() {
         Aufgabe10.crc2.lineWidth = 2;
         Aufgabe10.crc2.beginPath();
@@ -87,63 +110,27 @@ var Aufgabe10;
         Aufgabe10.crc2.fillStyle = "#F1FAFA";
         Aufgabe10.crc2.fill();
     }
-    function sun() {
-        let x = 160;
-        let y = 50;
-        let radius = 35;
-        let startAngle = 0;
-        let endAngle = 2 * Math.PI;
-        Aufgabe10.crc2.moveTo(0, 0);
-        Aufgabe10.crc2.beginPath();
-        Aufgabe10.crc2.arc(x, y, radius, startAngle, endAngle, true);
-        Aufgabe10.crc2.fillStyle = "#FFFF00";
-        Aufgabe10.crc2.fill();
-    }
-    function trees(_x, _y) {
-        Aufgabe10.crc2.lineWidth = 2;
-        Aufgabe10.crc2.beginPath();
-        Aufgabe10.crc2.moveTo(_x, _y - 60);
-        Aufgabe10.crc2.lineTo(_x - 20, _y);
-        Aufgabe10.crc2.lineTo(_x + 20, _y);
-        Aufgabe10.crc2.closePath();
-        Aufgabe10.crc2.fillStyle = "#008B45";
-        Aufgabe10.crc2.strokeStyle = "#006400";
-        Aufgabe10.crc2.fill();
-        Aufgabe10.crc2.stroke();
-    }
-    function snowflakes(_a, _b) {
-        Aufgabe10.crc2.beginPath();
-        Aufgabe10.crc2.arc(_a, _b, 2, 0, 3 * Math.PI);
-        Aufgabe10.crc2.fillStyle = "#FFFFFF";
-        Aufgabe10.crc2.strokeStyle = "#FFFFFF";
-        Aufgabe10.crc2.stroke();
-        Aufgabe10.crc2.fill();
-    }
-    function animationSnow() {
-        for (let i = 0; i < 500; i++) {
-            let snowflake = new Aufgabe10.Snow();
-            snowflake.x = Math.random() * 700;
-            snowflake.y = Math.random() * 1100;
-            snowflake.draw();
-            snow.push(snowflake);
+    function update() {
+        window.setTimeout(update, 1000 / fps);
+        Aufgabe10.crc2.putImageData(imgData, 0, 0);
+        for (let i = 0; i < snowflake.length; i++) {
+            let snow = snowflake[i];
+            snow.move();
+            snow.draw();
         }
-    }
-    function animationChild1() {
         for (let i = 0; i < 5; i++) {
-            let childone = new Aufgabe10.Child1();
-            childone.x = Math.random() * 85 + 200;
-            childone.y = Math.random() * 250 + 350;
-            childone.draw();
-            child1.push(childone);
+            let children1 = child1[i];
+            children1.move();
+            children1.draw();
         }
-    }
-    function animationChild2() {
-        for (let i = 0; i < 5; i++) {
-            let childtwo = new Aufgabe10.Child2();
-            childtwo.x = Math.random() * 85 + 200;
-            childtwo.y = Math.random() * 85 + 500;
-            childtwo.draw();
-            child2.push(childtwo);
+        for (let i = 0; i < 4; i++) {
+            let children2 = child2[i];
+            children2.move();
+            children2.draw();
+        }
+        for (let i = 0; i < 8; i++) {
+            let trees = tree[i];
+            trees.draw();
         }
     }
 })(Aufgabe10 || (Aufgabe10 = {}));

@@ -1,11 +1,7 @@
-namespace Aufgabe10 {
+namespace Aufgabe11 {
  
-    export class Snow {
-        x: number;
-        y: number;
-        dx: number;
-        dy: number;
-        color: string;
+    export class Snow extends Movement {
+       
         
         move(): void {
 
