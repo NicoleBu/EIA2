@@ -46,7 +46,7 @@ var Aufgabe10;
             trees.y = Math.random() * Aufgabe10.crc2.canvas.height;
             Aufgabe10.crc2.beginPath();
             Aufgabe10.crc2.moveTo(0, 500);
-            Aufgabe10.crc2.bezierCurveTo(20, 200, 500, 310, 250, 190);
+            Aufgabe10.crc2.bezierCurveTo(25, 205, 505, 370, 290, 230);
             if (Aufgabe10.crc2.isPointInPath(trees.x, trees.y)) {
                 tree.push(trees);
             }

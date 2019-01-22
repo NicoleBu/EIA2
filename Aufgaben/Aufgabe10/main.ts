@@ -79,7 +79,7 @@ namespace Aufgabe10 {
 
             crc2.beginPath();
             crc2.moveTo(0, 500);
-            crc2.bezierCurveTo(20, 200, 500, 310, 250, 190);
+            crc2.bezierCurveTo(25, 205, 505, 370, 290, 230);
 
             if (crc2.isPointInPath(trees.x, trees.y)) {
                 tree.push(trees);

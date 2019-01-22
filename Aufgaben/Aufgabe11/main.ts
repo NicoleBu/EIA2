@@ -25,7 +25,7 @@ namespace Aufgabe11 {
         
         imgData = crc2.getImageData(0, 0, 500, 800);
 
-        for (let i: number = 0; i < 80; i++) {
+        for (let i: number = 0; i < 90; i++) {
             let snow: Snow = new Snow();
             snow.x = Math.random() * crc2.canvas.width;
             snow.y = Math.random() * crc2.canvas.height;

@@ -13,7 +13,7 @@ var Aufgabe11;
         cloud2();
         sun();
         imgData = Aufgabe11.crc2.getImageData(0, 0, 500, 800);
-        for (let i = 0; i < 80; i++) {
+        for (let i = 0; i < 90; i++) {
             let snow = new Aufgabe11.Snow();
             snow.x = Math.random() * Aufgabe11.crc2.canvas.width;
             snow.y = Math.random() * Aufgabe11.crc2.canvas.height;
