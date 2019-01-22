@@ -62,15 +62,15 @@ var Aufgabe10;
         Aufgabe10.crc2.fillRect(0, 0, Aufgabe10.crc2.canvas.width, 110);
         Aufgabe10.crc2.beginPath();
         Aufgabe10.crc2.moveTo(0, 110);
-        Aufgabe10.crc2.lineTo(0, 300);
-        Aufgabe10.crc2.lineTo(320, 110);
+        Aufgabe10.crc2.lineTo(0, 400);
+        Aufgabe10.crc2.lineTo(500, 110);
         Aufgabe10.crc2.closePath();
         Aufgabe10.crc2.fill();
     }
     //Rodelhang
     function hill() {
         Aufgabe10.crc2.beginPath();
-        Aufgabe10.crc2.moveTo(0, 500);
+        Aufgabe10.crc2.moveTo(0, 800);
         Aufgabe10.crc2.closePath();
         Aufgabe10.crc2.fill();
     }

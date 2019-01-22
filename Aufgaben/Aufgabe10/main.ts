@@ -103,8 +103,8 @@ namespace Aufgabe10 {
 
         crc2.beginPath();
         crc2.moveTo(0, 110);
-        crc2.lineTo(0, 300);
-        crc2.lineTo(320, 110);
+        crc2.lineTo(0, 400);
+        crc2.lineTo(500, 110);
         crc2.closePath();
 
         crc2.fill();
@@ -114,7 +114,7 @@ namespace Aufgabe10 {
     function hill(): void {
 
         crc2.beginPath();
-        crc2.moveTo(0, 500);
+        crc2.moveTo(0,800);
         crc2.closePath();
         crc2.fill();
     }
