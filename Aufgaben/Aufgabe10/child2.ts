@@ -38,7 +38,7 @@ namespace Aufgabe10 {
             crc2.beginPath();
             crc2.moveTo(this.x, this.y);
             crc2.lineTo(this.x + 10, this.y - 15);
-            crc2.lineTo(this.x + 3, this.y - 50); //oberkörper
+            crc2.lineTo(this.x + 3, this.y - 50); 
             crc2.moveTo(this.x + 30, this.y - 10);
             crc2.stroke();
 

@@ -24,7 +24,7 @@ var Aufgabe10;
             Aufgabe10.crc2.beginPath();
             Aufgabe10.crc2.moveTo(this.x, this.y);
             Aufgabe10.crc2.lineTo(this.x + 10, this.y - 15);
-            Aufgabe10.crc2.lineTo(this.x + 3, this.y - 50); //oberkörper
+            Aufgabe10.crc2.lineTo(this.x + 3, this.y - 50);
             Aufgabe10.crc2.moveTo(this.x + 30, this.y - 10);
             Aufgabe10.crc2.stroke();
             Aufgabe10.crc2.strokeStyle = "#000000";
