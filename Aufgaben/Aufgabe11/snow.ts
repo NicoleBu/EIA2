@@ -21,7 +21,7 @@ namespace Aufgabe11 {
             
             
             crc2.fillStyle = this.color;
-            crc2.strokeStyle = "#ffffff";
+            crc2.strokeStyle = "white";
             crc2.lineWidth = .2;
 
             crc2.beginPath();

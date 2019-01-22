@@ -13,7 +13,7 @@ var Aufgabe11;
         }
         draw() {
             Aufgabe11.crc2.fillStyle = this.color;
-            Aufgabe11.crc2.strokeStyle = "#ffffff";
+            Aufgabe11.crc2.strokeStyle = "white";
             Aufgabe11.crc2.lineWidth = .2;
             Aufgabe11.crc2.beginPath();
             Aufgabe11.crc2.arc(this.x, this.y, 3, 0, 2 * Math.PI, false);
