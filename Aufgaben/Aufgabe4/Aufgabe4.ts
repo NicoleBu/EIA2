@@ -97,7 +97,7 @@ namespace xmasTreeShop {
         
         HTML += "<fieldset>";
         HTML += "<legend>Candles</legend>";
-        HTML += "<checkbox name='Select' id='candles'>";
+        HTML += "<select name='Select' id='candles'>";
         for (let arrayNumber: number = 0; arrayNumber < xmasCandles.length; arrayNumber++) {
 
        

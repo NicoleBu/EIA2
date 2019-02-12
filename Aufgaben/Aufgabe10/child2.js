@@ -4,9 +4,9 @@ var Aufgabe10;
         move() {
             this.x += this.dx;
             this.y += this.dy;
-            if (this.x < 0 || this.y > 500) {
+            if (this.x < 0 || this.y > 700) {
                 this.x = 500;
-                this.y = Math.random() * 370 + 210;
+                this.y = Math.random() * 250 + 150;
             }
             this.draw();
         }

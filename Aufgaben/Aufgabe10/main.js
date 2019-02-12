@@ -3,7 +3,6 @@ var Aufgabe10;
     window.addEventListener("load", init);
     let fps = 25;
     let snowflake = [];
-    let child1 = [];
     let child2 = [];
     let tree = [];
     let imgData;
@@ -24,19 +23,11 @@ var Aufgabe10;
             snow.color = "ffffff";
             snowflake.push(snow);
         }
-        for (let i = 0; i < 5; i++) {
-            let child = new Aufgabe10.Child1();
-            child.x = 0;
-            child.y = Math.random() * 200 + 750;
-            child.dx = Math.random() * 3;
-            child.dy = -child.dx;
-            child1.push(child);
-        }
-        for (let i = 0; i < 5; i++) {
+        for (let i = 0; i < 8; i++) {
             let child = new Aufgabe10.Child2();
-            child.x = 360;
-            child.y = Math.random() * 0 + 750;
-            child.dx = Math.random() * 3 - 5;
+            child.x = 450;
+            child.y = Math.random() * +800;
+            child.dx = Math.random() * 1 - 3;
             child.dy = -child.dx;
             child2.push(child);
         }
@@ -119,11 +110,6 @@ var Aufgabe10;
             snow.draw();
         }
         for (let i = 0; i < 5; i++) {
-            let children1 = child1[i];
-            children1.move();
-            children1.draw();
-        }
-        for (let i = 0; i < 4; i++) {
             let children2 = child2[i];
             children2.move();
             children2.draw();

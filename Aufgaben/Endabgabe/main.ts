@@ -1,12 +1,12 @@
-namespace Aufgabe10 {
+namespace Endabgabe {
    window.addEventListener("load", init);
     export let crc2: CanvasRenderingContext2D;
     
     let fps: number = 25;
     let snowflake: Snow[] = [];
+    let child1: Child1[] = [];
     let child2: Child2[] = [];
     let tree: Tree [] = [];
-    let snowballs: snowball[] = [];
 
     
 
@@ -41,11 +41,27 @@ namespace Aufgabe10 {
         }
 
 
-         for (let i: number = 0; i < 8; i++) {
+
+
+
+        for (let i: number = 0; i < 5; i++) {
+            let child: Child1 = new Child1();
+            child.x = 0;
+            child.y = Math.random() * 200 + 750;
+            child.dx = Math.random() * 3;
+            child.dy = - child.dx;
+
+            child1.push(child);
+
+        }
+
+
+        
+        for (let i: number = 0; i < 5; i++) {
             let child: Child2 = new Child2();
-            child.x = 450;
-            child.y = Math.random() *  + 800;
-            child.dx = Math.random() * 1 - 3;
+            child.x = 360;
+            child.y = Math.random() * 0 + 750;
+            child.dx = Math.random() * 3 - 5;
             child.dy = - child.dx;
 
             child2.push(child);
@@ -77,16 +93,8 @@ namespace Aufgabe10 {
         update();
     }
 
-  //Schneeball
-        function throwSnowball(_event: MouseEvent): void {
-        let x: number = _event.clientX;
-        let y: number = _event.clientY;
-        let ball: snowball = new snowball();
-        ball.x = x;
-        ball.y = y;
-        ball.timer = 25;
-        snowballs.push(ball);
-}
+
+
 
     //Himmel
         function sky(): void {
@@ -109,7 +117,6 @@ namespace Aufgabe10 {
         crc2.moveTo(0,800);
         crc2.closePath();
         crc2.fill();
-       
     }
 
     //Sonne 
@@ -171,6 +178,11 @@ namespace Aufgabe10 {
         }
 
         for (let i: number = 0; i < 5; i++) {
+            let children1: Child1 = child1[i];
+            children1.move();
+            children1.draw();
+        }
+        for (let i: number = 0; i < 4; i++) {
             let children2: Child2 = child2[i];
             children2.move();
             children2.draw();
@@ -179,25 +191,6 @@ namespace Aufgabe10 {
         for (let i: number = 0; i < 8; i++) {
             let trees: Tree = tree[i];
             trees.draw();
-            
-        for (let i: number = 0; i < snowballs.length; i++) {
-            if (snowballs[i].timer > 0) {
-                snowballs[i].draw();
-                //snowballs[i].checkIfHit(childrenArray[i].x, childrenArray[i].y);
-            }
-            else {
-                if (snowballs[i].timer == 0) {
-                    snowballs[i].draw();
-                    console.log("timer:" + snowballs[i].timer);
-                    for (let i2: number = 0; i2 < childrenArray.length; i2++) {
-                        console.log("TASDGFSDF:" + children.length);
-                        if (snowballs[i].checkIfHit(childrenArray[i2].x, childrenArray[i2].y) == true && childrenArray[i2].state == "ridedown") {
-                            childrenArray[i2].state = "dead";
-                            score += childrenArray[i2].getSpeed() * 10;
-                            console.log("score:" + score);
-                        }
-                        else {
-            console.log("else");
         }
 
     }
@@ -210,4 +203,3 @@ namespace Aufgabe10 {
 
 
 
-            

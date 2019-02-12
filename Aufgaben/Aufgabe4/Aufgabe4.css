@@ -1,19 +1,31 @@
 @charset "UTF-8";
 
-    h1 {
-	margin-top: 3em;
-	margin-left: 7em;
-	color: gold;
-	font-family: 'Cinzel', serif;
+    background {
+    position: relative;
+    }
 
+    h1 {
+	margin-top: 2em;
+	margin-left: 7.5em;
+	color: black;
+	font-family: 'Staatliches', cursive;
+	font-size: 50px;
+    }
+    
+    h2 {
+    margin-top: 0em;
+	margin-left: 8em;
+	color: black;
+	font-family: 'Homemade Apple', cursive;
+	font-size: 30px;
 	
-	}
+    }
 
     h3 {
 	text-align: left;
-	color: gold;
+	color: black;
 	font-size: 25px;
-	font-family:'Cinzel', serif;
+	font-family: 'Thasadith', sans-serif;
     }
 
     #div {
@@ -21,33 +33,33 @@
 	top: 105px;
 	left: 1000px;
 	width: 300px;
-	border-top: thin solid gold;
-	border-left:thin solid gold;
-	border-bottom:thin solid gold;
 	padding-bottom: 150px;
 	padding-left: 25px;
 	padding-right: 120px;
-	background-Color: #0B6121;
+	background-Color: white;
 	position: fixed;
-	color: white;
+	color: black;
+	font-family: 'Thasadith', sans-serif;
+	opacity: 0.8;
+    filter: alpha(opacity=50);
     }
 
     #fieldset {
-	border: 1px solid gold;
-	background-Color: #0B6121;
-	border-radius: 5px;
-	color: white;
-	font-family:'Halant', serif;
+	background-Color: white;
+	color: black;
+	font-family: 'Thasadith', sans-serif;
 	margin-top: 5em;
 	margin-left: 10em;
 	width: 700px;
+	opacity: 0.8;
+    filter: alpha(opacity=50);
 	
     }
 
     legend {
 	font-size: 1.25em;
 	font-weight: bold;
-	font-family:'Halant', serif;
+	font-family: 'Thasadith', sans-serif;
     }
 
 
@@ -72,8 +84,8 @@
     
     
     button {
-    background-color:white;
-    color: black;
+    background-color:grey;
+    color: white;
     border-radius: 20px;
     height: 1.5em;
 	position: absolute;
@@ -83,7 +95,6 @@
 	display: inline-block;
     border-radius: 4px;
     border: none;
-    color: black;
     text-align: center;
     font-size: 20px;
     transition: all 0.5s;
