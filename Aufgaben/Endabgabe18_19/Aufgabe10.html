@@ -31,28 +31,33 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
 
 <div id="div">
 <h1 id="rodeln">Rodelhang</h1>
-<button id="start">Start</button></br>
+<button id="start">Start</button>
+<br>
 <button id="scores">HighScores</button>
 </div>
 
-<div id="EndScreen">
+<div id="AfterGame">
 <h3>Game Over</h3>
 <p id="endScore"></p>
+
+<fieldset id="highscore1">
+    <legend> Enter Highscore</legend>
+     <br>
+       <input type="text" name="name" placeholder="Name eintragen" id="name"/>
+        <br>
+         <button type="button" id="send">Send</button>
+</fieldset>
+
+<fieldset id="highscore2">
+    <legend>Highscore-List </legend>
+     <br>
+       <button type= "button" id= "refresh"> Refresh </button>
+</fieldset>
+
 <button id="restart">Restart</button>
 
-<fieldset id="input">
-<legend> Highscore hier eintragen!</legend>
-<input type="text" name="name" placeholder="Name eintragen" id="name"/>
-<button type="button" id="insert">Score absenden</button>
-</fieldset>
-
-<fieldset id="output">
-<legend>Highscores </legend>
-<button type= "button" id= "refresh"> Refresh </button>
-</fieldset>
-<div id="scores"></div>
-
 </div>
+
 
 <canvas id="canvas" width=500 height=800></canvas>
 </body>

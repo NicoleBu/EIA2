@@ -5,14 +5,14 @@ var Endabgabe;
         draw() { }
     }
     Endabgabe.All = All;
-    class Move extends All {
+    class Movement extends All {
         move() {
             this.y += this.dy;
             this.x += this.dx;
         }
     }
-    Endabgabe.Move = Move;
-    class Child2 extends Move {
+    Endabgabe.Movement = Movement;
+    class Child2 extends Movement {
         getSpeed() {
             if (this.state == "down") {
                 return Math.floor(this.dx * this.dy * -1 * 20);

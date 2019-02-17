@@ -16,7 +16,7 @@ namespace DatabaseClient {
         let inputs: NodeListOf<HTMLInputElement> = document.getElementsByTagName("input");
         let query: string = "command=insert";
         query += "&name=" + inputs[0].value;
-        query += "&score=" + document.getElementById("endscore").getAttribute("value");
+        query += "&score=" + document.getElementById("endScore").getAttribute("value");
         
         sendRequest(query, handleInsertResponse);
     }

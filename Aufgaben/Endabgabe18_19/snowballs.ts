@@ -1,8 +1,10 @@
 namespace Endabgabe {
 
-    export class snowball extends Move  {
+    export class snowball   {
 
-        
+        x: number;
+        y: number;
+        color: string;
         timer: number;
         move(): void {
         }

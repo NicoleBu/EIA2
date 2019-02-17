@@ -1,6 +1,6 @@
 var Endabgabe;
 (function (Endabgabe) {
-    class snowball extends Endabgabe.Move {
+    class snowball {
         move() {
         }
         draw() {

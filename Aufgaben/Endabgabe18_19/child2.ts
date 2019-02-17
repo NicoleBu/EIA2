@@ -1,4 +1,4 @@
-namespace Endabgabe {
+namespace Endabgabe{
 
     export class All {
         x: number;
@@ -8,7 +8,7 @@ namespace Endabgabe {
         draw(): void { }
      }
     
-    export class Move extends All {
+    export class Movement extends All {
         dx: number;
         dy: number;
         move(): void {
@@ -18,7 +18,7 @@ namespace Endabgabe {
 }        
        
 
-      export class Child2 extends Move{
+      export class Child2 extends Movement{
           
           state: string;
          

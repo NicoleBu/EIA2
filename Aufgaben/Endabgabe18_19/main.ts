@@ -19,17 +19,17 @@ namespace Endabgabe {
         child2 = [];
         snowballs = [];
         
+         document.getElementById("canvas").style.display = "none";
+         document.getElementsByTagName("canvas")[0].style.display = "none";
+         document.getElementById("timer").style.display = "none";
+         document.getElementById("Baelle").style.display = "none";
+         document.getElementById("score").style.display = "none";
+         document.getElementById("AfterGame").style.display = "none";
+         document.getElementById("highscore1").style.display = "none";
+         document.getElementById("highscore2").style.display = "none";
+         document.getElementById("start").addEventListener("click", main);
+         document.getElementById("scores").addEventListener("click", highscores);
         
-        document.getElementsByTagName("canvas")[0].style.display = "none";
-        document.getElementById("score").style.display = "none";
-        document.getElementById("retry").style.display = "none";
-        document.getElementById("EndScreen").style.display = "none";
-        document.getElementById("div").style.display = "none";
-        document.getElementById("input").style.display = "none";
-        document.getElementById("output").style.display = "none";
-        document.getElementsByTagName("div")[0].style.display = "initial";
-        document.getElementById("start").addEventListener("click", main);
-        document.getElementById("refresh").addEventListener("click", highscores);
         }
     
     
@@ -41,15 +41,16 @@ namespace Endabgabe {
         snowballs = [];
       
         document.getElementById("div").style.display = "none";
-        document.getElementsByTagName("div")[0].style.display="none";
-        document.getElementById("retry").style.display = "none";
-        document.getElementById("EndScreen").style.display = "none";
-        document.getElementById("rodeln").style.display = "none";
-        document.getElementById("refresh").style.display = "none";
-        document.getElementById("start").style.display = "none";
-        document.getElementById("scores").style.display = "none";
+        document.getElementsByTagName("div")[0].style.display = "initial";
         document.getElementById("score").style.display = "initial";
+        document.getElementById("canvas").style.display = "initial";
+
         document.getElementsByTagName("canvas")[0].style.display = "initial";
+        document.getElementById("Baelle").style.display = "initial";
+        document.getElementById("score").style.display = "initial";
+        document.getElementById("AfterGame").style.display = "none";
+        document.getElementById("highscore1").style.display = "none";
+        document.getElementById("highscore2").style.display = "none";
         
         
         let canvas: HTMLCanvasElement = document.getElementsByTagName("canvas")[0];
@@ -243,6 +244,7 @@ namespace Endabgabe {
     
     
     function end(): void {
+        
         document.getElementById("score").style.display = "none";
         document.getElementsByTagName("canvas")[0].style.display = "none";
         document.getElementById("timer").style.display = "none";
@@ -250,15 +252,17 @@ namespace Endabgabe {
         document.getElementById("score").style.display = "none";
         document.getElementsByTagName("div")[0].style.display = "none";
         
-        document.getElementById("EndScreen").style.display = "initial";
-        document.getElementById("refresh").addEventListener("click", highscores);
+        document.getElementById("AfterGame").style.display = "initial";
+        document.getElementById("highscore1").style.display = "initial";
+        document.getElementById("highscore2").style.display = "initial";
+        document.getElementById("scores").addEventListener("click", highscores);
         document.getElementById("endScore").innerHTML = "Score:" + score.toString();
         document.getElementById("endScore").setAttribute("value", score.toString());
         
         
         
         document.getElementsByTagName("body")[0].addEventListener("change", handleChange);
-
+        document.getElementById("restart").addEventListener("click", init);
         document.getElementById("insert").addEventListener("click", sendRequestWithCustomData);
       }
     
@@ -272,9 +276,9 @@ namespace Endabgabe {
         document.getElementsByTagName("canvas")[0].style.display = "none";
         document.getElementById("score").style.display = "none";
         document.getElementsByTagName("div")[0].style.display = "none";
-        document.getElementById("EndScreen").style.display = "none";
+        document.getElementById("AfterGame").style.display = "none";
         document.getElementById("scores").style.display = "initial";
-        document.getElementById("refresh").addEventListener("click", highscores);
+        document.getElementById("scores").addEventListener("click", highscores);
     }
     
     
@@ -285,7 +289,7 @@ function update(): void {
         if (document.getElementsByTagName("canvas")[0].getAttribute("style") == "display: initial;") {
       
         let ballCount: number = snowballs.length;
-        document.getElementById("Baelle").innerHTML = "Snowball amount:" + ballCount.toString() + "";
+        document.getElementById("Baelle").innerHTML = "Thrown Snowballs:  " + ballCount.toString() + "";
        
         window.setTimeout(update, 1000 / fps);
         crc2.putImageData(imgData, 0, 0);
@@ -347,11 +351,11 @@ function update(): void {
                 }
 
 
-    if (snowballs.length < 25) {
-                    document.getElementById("Baelle").innerHTML = "Snowball amount:  " + ballCount.toString() + "";
+    if (snowballs.length < 20) {
+                    document.getElementById("Baelle").innerHTML = "Thrown Snowballs:  " + ballCount.toString() + "";
 
                 }
-                if (snowballs.length > 25) {
+                if (snowballs.length > 20) {
                     end();
 
                 }
@@ -365,5 +369,4 @@ function update(): void {
     
     
    }
- }
-       
+}
