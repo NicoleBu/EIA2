@@ -1,4 +1,5 @@
-namespace Aufgabe10 {
+namespace Endabgabe {
+    
    window.addEventListener("load", init);
     export let crc2: CanvasRenderingContext2D;
     
@@ -7,17 +8,55 @@ namespace Aufgabe10 {
     let child2: Child2[] = [];
     let tree: Tree [] = [];
     let snowballs: snowball[] = [];
-
+    let score: number = 0;
     
-
     let imgData: ImageData;
-
-
-
-    function init(_event: Event): void {
-        let canvas: HTMLCanvasElement = document.getElementsByTagName("canvas")[0];
-        crc2 = canvas.getContext("2d");
+    
+    
+    // Startbildschirm
+    function init(): void {
         
+        child2 = [];
+        snowballs = [];
+        
+        
+        document.getElementsByTagName("canvas")[0].style.display = "none";
+        document.getElementById("score").style.display = "none";
+        document.getElementById("retry").style.display = "none";
+        document.getElementById("EndScreen").style.display = "none";
+        document.getElementById("div").style.display = "none";
+        document.getElementById("input").style.display = "none";
+        document.getElementById("output").style.display = "none";
+        document.getElementsByTagName("div")[0].style.display = "initial";
+        document.getElementById("start").addEventListener("click", main);
+        document.getElementById("refresh").addEventListener("click", highscores);
+        }
+    
+    
+    // Canvas, Spielseite
+    function main(_event: Event): void {
+        
+        score = 0;
+        child2 = [];
+        snowballs = [];
+      
+        document.getElementById("div").style.display = "none";
+        document.getElementsByTagName("div")[0].style.display="none";
+        document.getElementById("retry").style.display = "none";
+        document.getElementById("EndScreen").style.display = "none";
+        document.getElementById("rodeln").style.display = "none";
+        document.getElementById("refresh").style.display = "none";
+        document.getElementById("start").style.display = "none";
+        document.getElementById("scores").style.display = "none";
+        document.getElementById("score").style.display = "initial";
+        document.getElementsByTagName("canvas")[0].style.display = "initial";
+        
+        
+        let canvas: HTMLCanvasElement = document.getElementsByTagName("canvas")[0];
+        
+        canvas.addEventListener("click", throwSnowball);
+        crc2 = canvas.getContext("2d");
+       
         
         sky();
         hill();
@@ -25,10 +64,13 @@ namespace Aufgabe10 {
         cloud2();
         sun();
         
-        
-        
-        
         imgData = crc2.getImageData(0, 0, 500, 800);
+        
+        for (let i: number = 0; i < 10; i++) {
+           
+            createChild();
+        }
+        
 
         for (let i: number = 0; i < 50; i++) {
             let snow: Snow = new Snow();
@@ -39,23 +81,10 @@ namespace Aufgabe10 {
 
             snowflake.push(snow);
         }
-
-
-         for (let i: number = 0; i < 8; i++) {
-            let child: Child2 = new Child2();
-            child.x = 450;
-            child.y = Math.random() *  + 800;
-            child.dx = Math.random() * 1 - 3;
-            child.dy = - child.dx;
-
-            child2.push(child);
-
-        }
-
         
 
 
-        for (let i: number = 0; i < 10; i++) {
+        for (let i: number = 0; i < 8; i++) {
             let trees: Tree = new Tree();
 
             trees.x = Math.random() * crc2.canvas.width;
@@ -76,23 +105,15 @@ namespace Aufgabe10 {
 
         update();
     }
-
-  //Schneeball
-        function throwSnowball(_event: MouseEvent): void {
-        let x: number = _event.clientX;
-        let y: number = _event.clientY;
-        let ball: snowball = new snowball();
-        ball.x = x;
-        ball.y = y;
-        ball.timer = 25;
-        snowballs.push(ball);
-}
-
-    //Himmel
+        
+        
+     
+    
+    
+     //Himmel
         function sky(): void {
         crc2.fillStyle = "#98f5ff";
         crc2.fillRect(0, 0, crc2.canvas.width, 110);
-
         crc2.beginPath();
         crc2.moveTo(0, 110);
         crc2.lineTo(0, 400);
@@ -104,7 +125,7 @@ namespace Aufgabe10 {
 
     //Rodelhang
     function hill(): void {
-
+        crc2.fillStyle = "white";
         crc2.beginPath();
         crc2.moveTo(0,800);
         crc2.closePath();
@@ -155,31 +176,153 @@ namespace Aufgabe10 {
         crc2.fill();
     }
     
+        
+    //Schneeball
+        function throwSnowball(_event: MouseEvent): void {
+        let x: number = _event.clientX;
+        let y: number = _event.clientY;
+        let ball: snowball = new snowball();
+        ball.x = x;
+        ball.y = y;
+        ball.timer = 25;
+        snowballs.push(ball);
+    } 
+        
+    //Kind, Kinder
+        function createChild(): void {
+        
+            let child: Child2 = new Child2();
+            child.x = 600;
+            child.y = Math.random() *  + 600;
+            child.dx = Math.random() * 2 - 4;
+            child.dy = - child.dx;
+        child.state = "ridedown";
 
+        child2.push(child);
+}   
+        
+        
+    
+    
+    
+    
+    
+    function handleChange(_event: Event): void {
+        let target: HTMLInputElement = <HTMLInputElement>_event.target;
+        target.setAttribute("value", target.value);
+    }    
+    
+    
+    let address: string = "https://eia-2-ws.herokuapp.com/";
+      
 
+     
+     function sendRequestWithCustomData(): void {
+        console.log("requestcustom");
+        let xhr: XMLHttpRequest = new XMLHttpRequest();
+        let sendString: string = "";
+        sendString += "name:" + document.getElementById("textInput").getAttribute("value") + "&" + "score:" + score;
 
+        xhr.open("GET", address + "?" + sendString, true);
+        xhr.addEventListener("readystatechange", handleStateChange);
+        xhr.send();
+        highscores();
+    }
+    
+    
+       function handleStateChange(_event: ProgressEvent): void {
+        var xhr: XMLHttpRequest = <XMLHttpRequest>_event.target;
+        if (xhr.readyState == XMLHttpRequest.DONE) {
+            console.log("ready: " + xhr.readyState, " | type: " + xhr.responseType, " | status:" + xhr.status, " | text:" + xhr.statusText);
+            console.log("response: " + xhr.response);
+        }
+    }
+    
+    
+    
+    
+    
+    function end(): void {
+        document.getElementById("score").style.display = "none";
+        document.getElementsByTagName("canvas")[0].style.display = "none";
+        document.getElementById("timer").style.display = "none";
+        document.getElementById("Baelle").style.display = "none";
+        document.getElementById("score").style.display = "none";
+        document.getElementsByTagName("div")[0].style.display = "none";
+        
+        document.getElementById("EndScreen").style.display = "initial";
+        document.getElementById("refresh").addEventListener("click", highscores);
+        document.getElementById("endScore").innerHTML = "Score:" + score.toString();
+        document.getElementById("endScore").setAttribute("value", score.toString());
+        
+        
+        
+        document.getElementsByTagName("body")[0].addEventListener("change", handleChange);
 
-    function update(): void {
+        document.getElementById("insert").addEventListener("click", sendRequestWithCustomData);
+      }
+    
+     
+    
+    
+    function highscores(): void {
+        document.getElementById("endscore").innerText = score.toString();
+        document.getElementById("endscore").setAttribute("value", score.toString());
+        
+        document.getElementsByTagName("canvas")[0].style.display = "none";
+        document.getElementById("score").style.display = "none";
+        document.getElementsByTagName("div")[0].style.display = "none";
+        document.getElementById("EndScreen").style.display = "none";
+        document.getElementById("scores").style.display = "initial";
+        document.getElementById("refresh").addEventListener("click", highscores);
+    }
+    
+    
+    
 
+    
+function update(): void {
+        if (document.getElementsByTagName("canvas")[0].getAttribute("style") == "display: initial;") {
+      
+        let ballCount: number = snowballs.length;
+        document.getElementById("Baelle").innerHTML = "Snowball amount:" + ballCount.toString() + "";
+       
         window.setTimeout(update, 1000 / fps);
         crc2.putImageData(imgData, 0, 0);
-
+            
+        document.getElementById("score").innerText = score.toString();    
+            
+        
+            
         for (let i: number = 0; i < snowflake.length; i++) {
             let snow: Snow = snowflake[i];
             snow.move();
             snow.draw();
         }
 
-        for (let i: number = 0; i < 5; i++) {
+        for (let i: number = 0; i < child2.length; i++) {
+           
             let children2: Child2 = child2[i];
             children2.move();
             children2.draw();
+        }
+      
+        for (let i: number = 0; i < child2.length; i++) {
+            child2[i].move();
+            child2[i].draw();
+            if (child2[i].x < -10 || child2[i].y > (crc2.canvas.height + 10)) {
+                child2.splice(i, 1);
+                createChild();
+                console.log("length:" + child2.length);
+            }
         }
 
         for (let i: number = 0; i < 8; i++) {
             let trees: Tree = tree[i];
             trees.draw();
-            
+        }
+      
+        
         for (let i: number = 0; i < snowballs.length; i++) {
             if (snowballs[i].timer > 0) {
                 snowballs[i].draw();
@@ -189,25 +332,38 @@ namespace Aufgabe10 {
                 if (snowballs[i].timer == 0) {
                     snowballs[i].draw();
                     console.log("timer:" + snowballs[i].timer);
-                    for (let i2: number = 0; i2 < childrenArray.length; i2++) {
-                        console.log("TASDGFSDF:" + children.length);
-                        if (snowballs[i].checkIfHit(childrenArray[i2].x, childrenArray[i2].y) == true && childrenArray[i2].state == "ridedown") {
-                            childrenArray[i2].state = "dead";
-                            score += childrenArray[i2].getSpeed() * 10;
-                            console.log("score:" + score);
+                    for (let i2: number = 0; i2 < child2.length; i2++) {
+                        
+                        if (snowballs[i].checkIfHit(child2[i2].x, child2[i2].y) == true && child2[i2].state == "down") {
+                            score += child2[i2].getSpeed() * 10;
+                            child2[i2].state = "shot";
                         }
-                        else {
-            console.log("else");
+                        if (snowballs[i].checkIfHitChild1(child2[i2].x, child2[i2].y) == true && child2[i2].state == "up") {
+                            score += child2[i2].getSpeed() * 10;
+                            child2[i2].state = "shot";
+                        }
+                        
+                    }
+                }
+
+
+    if (snowballs.length < 25) {
+                    document.getElementById("Baelle").innerHTML = "Snowball amount:  " + ballCount.toString() + "";
+
+                }
+                if (snowballs.length > 25) {
+                    end();
+
+                }
+             }
+      
+      document.getElementById("score").innerText = score.toString(); 
+    
         }
-
-    }
-
-}
+      }
+ 
+    
+    
+   }
+ }
        
-
-
-
-
-
-
-            

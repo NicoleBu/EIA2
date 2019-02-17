@@ -1,4 +1,4 @@
-namespace Aufgabe10 {
+namespace Endabgabe {
 
 
     export class Child1 {

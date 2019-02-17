@@ -1,5 +1,5 @@
-var Aufgabe10;
-(function (Aufgabe10) {
+var Endabgabe;
+(function (Endabgabe) {
     class Snow {
         move() {
             this.dy = 2;
@@ -12,16 +12,16 @@ var Aufgabe10;
             this.draw();
         }
         draw() {
-            Aufgabe10.crc2.fillStyle = this.color;
-            Aufgabe10.crc2.strokeStyle = "#ffffff";
-            Aufgabe10.crc2.lineWidth = .2;
-            Aufgabe10.crc2.beginPath();
-            Aufgabe10.crc2.arc(this.x, this.y, 3, 0, 2 * Math.PI, false);
-            Aufgabe10.crc2.closePath();
-            Aufgabe10.crc2.fill();
-            Aufgabe10.crc2.stroke();
+            Endabgabe.crc2.fillStyle = this.color;
+            Endabgabe.crc2.strokeStyle = "#ffffff";
+            Endabgabe.crc2.lineWidth = .2;
+            Endabgabe.crc2.beginPath();
+            Endabgabe.crc2.arc(this.x, this.y, 3, 0, 2 * Math.PI, false);
+            Endabgabe.crc2.closePath();
+            Endabgabe.crc2.fill();
+            Endabgabe.crc2.stroke();
         }
     }
-    Aufgabe10.Snow = Snow;
-})(Aufgabe10 || (Aufgabe10 = {}));
+    Endabgabe.Snow = Snow;
+})(Endabgabe || (Endabgabe = {}));
 //# sourceMappingURL=snow.js.map

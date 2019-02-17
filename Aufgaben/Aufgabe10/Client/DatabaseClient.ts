@@ -7,19 +7,17 @@ namespace DatabaseClient {
         console.log("Init");
         let insertButton: HTMLButtonElement = <HTMLButtonElement>document.getElementById("insert");
         let refreshButton: HTMLButtonElement = <HTMLButtonElement>document.getElementById("refresh");
-        let findButton: HTMLButtonElement = <HTMLButtonElement>document.getElementById("find");
+        
         insertButton.addEventListener("click", insert);
         refreshButton.addEventListener("click", refresh);
-        findButton.addEventListener("click", find);
     }
 
     function insert(_event: Event): void {
         let inputs: NodeListOf<HTMLInputElement> = document.getElementsByTagName("input");
         let query: string = "command=insert";
         query += "&name=" + inputs[0].value;
-        query += "&firstname=" + inputs[1].value;
-        query += "&matrikel=" + inputs[2].value;
-        console.log(query);
+        query += "&score=" + document.getElementById("endscore").getAttribute("value");
+        
         sendRequest(query, handleInsertResponse);
     }
 
@@ -27,14 +25,8 @@ namespace DatabaseClient {
         let query: string = "command=refresh";
         sendRequest(query, handleFindResponse);
     }
+    
 
-    function find(_event: Event): void {
-        let search: HTMLInputElement = <HTMLInputElement>document.getElementById("number");
-        let query: string = "command=find";
-        query += "&matrikel=" + search.value ;
-        console.log(query);
-        sendRequest(query, handleFindResponse);
-        }
       
     function sendRequest(_query: string, _callback: EventListener): void {
         let xhr: XMLHttpRequest = new XMLHttpRequest();
@@ -49,14 +41,35 @@ namespace DatabaseClient {
             alert(xhr.response);
         }
     }
+    
+    function playerDataSort(_a: playerData, _b: playerData): number {
+        let returnNumber: number;
+        if (_a.score > _b.score) {
+            returnNumber = -1;
+        }
+        else if (_a.score < _b.score) {
+            returnNumber = 1;
+        }
+        else {
+            returnNumber = 0;
+        }
+        return returnNumber;
+
+}
 
     function handleFindResponse(_event: ProgressEvent): void {
         let xhr: XMLHttpRequest = (<XMLHttpRequest>_event.target);
         if (xhr.readyState == XMLHttpRequest.DONE) {
-            let output: HTMLTextAreaElement = document.getElementsByTagName("textarea")[0];
-            output.value = xhr.response;
-            let responseAsJson: JSON = JSON.parse(xhr.response);
-            console.log(responseAsJson);
+            let output: HTMLElement = document.getElementById("scores");
+            let scores: number[] = [];
+            let dataArray: playerData[] = JSON.parse(xhr.response);
+            dataArray.sort(playerDataSort); 
+            let helpString: string = "";
+            for (let i: number = 0; i < dataArray.length; i++) {
+               console.log(dataArray[i].name);
+               output.innerHTML += "<p id='showScores'><strong>Name: </strong>" + dataArray[i].name + "<br><strong>Score: </strong>" + dataArray[i].score + "</p>"; 
+            }
+            output.innerHTML = helpString;
         }
     }
 }
